@@ -1,1 +1,18 @@
-<p>todo works!</p>
+<div class="todo c-flex">
+  <section>Id :{{ todo.id }}</section>
+  <section>Status : {{ todo.status }}</section>
+  <section>Prority :{{ todo.priority }}</section>
+  <section>Title :{{ todo.title }}</section>
+  <section>Content : {{ todo.content }}</section>
+  <section>
+    <i class="fa-solid fa-calendar"></i>Created At :{{
+      todo.createdAt | date: "shortTime"
+    }}
+  </section>
+  <section>
+    <i class="fa-solid fa-bell"></i>Updated At{{
+      todo.updatedAt | date: "shortTime"
+    }}
+  </section>
+  <a><i class="fa-solid fa-pen-to-square"></i></a>
+</div>

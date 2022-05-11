@@ -1,7 +1,7 @@
 export enum status
 {
-    started,
-    inProgress,
-    closed,
-    Canceled
+    started ="Started",
+    inProgress ="InProgress",
+    closed="Closed",
+    Canceled ="Canceled"
 }

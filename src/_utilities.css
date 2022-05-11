@@ -1,12 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 h1 {
   font-size: 2rem;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
 }
 
 body {
@@ -24,38 +17,6 @@ body {
   --ax-accent: rgb(80,80,153);
   --ax-primary-400: rgb(184, 41, 124);
   --ax-rgb-primary: 201,23,127;
-}
-
-.mt-0 {
-  margin-top: 0rem;
-}
-
-.pt-0 {
-  padding-top: 0rem;
-}
-
-.mr-0 {
-  margin-right: 0rem;
-}
-
-.pr-0 {
-  padding-right: 0rem;
-}
-
-.mb-0 {
-  margin-bottom: 0rem;
-}
-
-.pb-0 {
-  padding-bottom: 0rem;
-}
-
-.ml-0 {
-  margin-left: 0rem;
-}
-
-.pl-0 {
-  padding-left: 0rem;
 }
 
 .mt-1 {
@@ -395,93 +356,10 @@ body {
 *                           POSITION
 *
 ****************************************************************************/
-.r-flex {
-  display: flex;
-  flex-direction: row;
-}
-
-.c-flex {
-  display: flex;
-  flex-direction: column;
-}
-
 .container {
   width: 100;
 }
 
 .list-style-none {
   list-style-type: none;
-}
-
-.ax-icon:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.ax-br-circle {
-  border-radius: 50%;
-}
-
-html, body {
-  height: auto;
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: linear-gradient(to top right, #434343 0%, black 100%);
-  background-repeat: no-repeat;
-}
-
-.title {
-  color: black;
-  font-size: 2rem;
-  line-height: 4rem;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-.navbar {
-  background-color: var(--ax-primary);
-  box-shadow: 0 0 0.7em 0.3em rgba(var(--ax-rgb-primary), 0.5);
-  border-bottom: 3px solid var(--ax-primary-400);
-  height: 4rem;
-}
-
-.ax-icon {
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--ax-primary);
-  color: black;
-  position: relative;
-  border: 5px solid var(--ax-primary-400);
-  box-shadow: 0 0 0.3em 0.2em #b83279;
-}
-
-.ax-icon:hover {
-  transform: rotateY(360deg);
-  transition: transform 500ms ease-in;
-}
-
-.ax-icon:before {
-  width: 30px;
-  height: 30px;
-}
-
-.ax-list {
-  width: 110px;
-  height: auto;
-  background-color: #181010;
-  box-shadow: inset -2px -2px 0 0.2em rgba(14, 11, 11, 0.5);
-  border: rgba(0, 0, 0, 0.3);
-  border-radius: 55px;
-}
-
-.main-content {
-  height: 100%;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-  justify-content: space-around;
 }

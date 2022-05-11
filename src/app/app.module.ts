@@ -10,14 +10,25 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import {MatBadgeModule} from '@angular/material/badge';
+import { MenuComponent } from './components/menu/menu.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { ContentComponent } from './components/content/content.component';
+import { ListComponent } from './components/list/list.component';
+import { DatePipePipe } from './pipes/date-pipe.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent
+    TodoComponent,
+    MenuComponent,
+    AsideComponent,
+    ContentComponent,
+    ListComponent,
+    DatePipePipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +39,10 @@ import { MatInputModule } from '@angular/material/input'
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatBadgeModule
+
 
 
 

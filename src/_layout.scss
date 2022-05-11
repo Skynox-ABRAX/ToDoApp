@@ -1,0 +1,87 @@
+@use "sass:string";
+
+$top: top;
+$left: left;
+$bottom: bottom;
+$right: right;
+$center: center;
+
+$position:(
+    $left,
+    $right,
+    $center
+);
+$zero:0;
+$un:1;
+$deux:2;
+$trois:3;
+$quatre:4;
+$cinq:5;
+$six:6;
+$sept:7;
+$huit:8;
+$neuf: 9;
+$dix: 10;
+
+$range:(
+    $zero,
+    $un,
+    $deux,
+    $trois,
+    $quatre,
+    $cinq,
+    $six,
+    $sept,
+    $huit,
+    $neuf,
+    $dix
+
+);
+
+$box-position:(
+    $top,
+    $right,
+    $bottom,
+    $left
+);
+
+
+
+@each $var in $range {
+    @each $pos in $box-position {
+        .m#{string.slice(#{$pos}, 1,1)}-#{$var}{
+            margin-#{$pos}: $var + rem;
+        }
+        .p#{string.slice(#{$pos}, 1,1)}-#{$var}{
+                padding-#{$pos}: $var + rem;
+        }
+    }
+}
+
+
+
+
+@each $var in $position {
+    .txt-#{$var}{
+        text-align: $var;
+    }
+}
+
+
+
+
+/***************************************************************************
+*
+*                           POSITION
+*
+****************************************************************************/
+
+.r-flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.c-flex{
+    display: flex;
+    flex-direction: column;
+}
