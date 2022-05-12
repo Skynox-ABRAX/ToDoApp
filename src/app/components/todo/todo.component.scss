@@ -1,6 +1,81 @@
 :host{
     width: 40%;
-    background-color: var(--ax-primary);
+    background: linear-gradient(to top right, rgb(202, 211, 200)0%,rgb(152, 160, 151)100%);
     padding: 1rem;
+    border-radius: 0.2rem;
+    /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
+
+    font-size: 1.2rem;
+
+    .todo{
+        row-gap: 1rem;
+        height: 100%;
+    }
+
+    h3{
+        font-weight: 500;
+        color: white;
+    }
+
+    .section-header{
+        gap:1rem;
+    }
+
+
+
+    .mat-mini-fab{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .ax-date-info{
+        font-size: 0.8rem;
+
+    }
+
+    .ax-other-infos{
+        margin-top: 2rem;
+    }
+
+    .ax-other-infos section{
+        margin-bottom: 0.5rem;
+
+
+        span{
+            padding-left: 0.5rem;
+        }
+
+        i{
+            color: white;
+        }
+
+        .ax-infos{
+            font-size: 0.8rem;
+    
+        }
+    }
+
+    
+
+    .ax-inprogress{
+        background-color: var(--ax-progress);
+    }
+
+    
+    .ax-closed{
+        background-color: var(--ax-closed);
+        
+    }
+
+    .ax-canceled{
+        background-color: var(--ax-canceled);
+    }
+
+    .ax-started{
+        background-color: var(--ax-started);
+    }
+
+
+    
 
 }

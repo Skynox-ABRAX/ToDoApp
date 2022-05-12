@@ -1,5 +1,53 @@
 :host {
   width: 40%;
-  background-color: var(--ax-primary);
+  background: linear-gradient(to top right, #cad3c8 0%, #98a097 100%);
   padding: 1rem;
+  border-radius: 0.2rem;
+  /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
+  font-size: 1.2rem;
+}
+:host .todo {
+  row-gap: 1rem;
+  height: 100%;
+}
+:host h3 {
+  font-weight: 500;
+  color: white;
+}
+:host .section-header {
+  gap: 1rem;
+}
+:host .mat-mini-fab {
+  width: 2rem;
+  height: 2rem;
+}
+:host .ax-date-info {
+  font-size: 0.8rem;
+}
+:host .ax-other-infos {
+  margin-top: 2rem;
+}
+:host .ax-other-infos section {
+  margin-bottom: 0.5rem;
+}
+:host .ax-other-infos section span {
+  padding-left: 0.5rem;
+}
+:host .ax-other-infos section i {
+  color: white;
+}
+:host .ax-other-infos section .ax-infos {
+  font-size: 0.8rem;
+}
+:host .ax-inprogress {
+  background-color: var(--ax-progress);
+}
+:host .ax-closed {
+  background-color: var(--ax-closed);
+}
+:host .ax-canceled {
+  background-color: var(--ax-canceled);
+}
+:host .ax-started {
+  background-color: var(--ax-started);
 }

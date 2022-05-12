@@ -1,6 +1,13 @@
 :root {
-  --ax-primary: rgb(201, 23, 127);
   --ax-accent: rgb(80,80,153);
+  --ax-primary:rgb(235, 59, 90);
+  --ax-started: rgb(56, 103, 214);
+  --ax-progress: rgb(196, 229, 56);
+  --ax-closed: rgb(237, 76, 103);
+  --ax-canceled: rgb(247, 183, 49);
+  --ax-low: rgb(253, 167, 223);
+  --ax-normal:rgb(32, 191, 107);
+  --ax-high:rgb(234, 32, 39);
   --ax-primary-400: rgb(184, 41, 124);
   --ax-rgb-primary: 201,23,127;
 }

@@ -9,6 +9,7 @@ export class todo implements ITodo
     content: string;
     status: status ;
     priority: priority;
+    closing: Date;
     createdAt: Date;
     updatedAt: Date;
     
@@ -16,6 +17,7 @@ export class todo implements ITodo
     {
         Object.assign(this, values); 
     }
+
 
 
 

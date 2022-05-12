@@ -1,19 +1,20 @@
 :host{
-    background-color: rgb(20,20,20);
-    border-radius: 1rem;
+    background-color: rgb(44, 58, 71);
+    box-shadow:  0px 0px 0.30em 0.2em rgba(12, 128, 128, 0.5);
+    border-radius: 0.5rem;
     height: auto;
     min-width: 20%;
     max-width: 20rem;
 
     
     .ax-header{
-        background-color: var(--ax-primary);
+        background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
     }
 
     h2{
-        color: black;
+        color: white;
         flex-grow: 5;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 3rem;
         height:3rem;
     }

@@ -1,18 +1,42 @@
 <div class="todo c-flex">
-  <section>Id :{{ todo.id }}</section>
-  <section>Status : {{ todo.status }}</section>
-  <section>Prority :{{ todo.priority }}</section>
-  <section>Title :{{ todo.title }}</section>
-  <section>Content : {{ todo.content }}</section>
-  <section>
-    <i class="fa-solid fa-calendar"></i>Created At :{{
-      todo.createdAt | date: "shortTime"
-    }}
-  </section>
-  <section>
-    <i class="fa-solid fa-bell"></i>Updated At{{
-      todo.updatedAt | date: "shortTime"
-    }}
-  </section>
-  <a><i class="fa-solid fa-pen-to-square"></i></a>
+  <div class="section-header r-flex">
+    <h3 class="flex-grow-1 mt-0 mb-0">Title : {{ todo.title }}</h3>
+    <div class="ax-status">
+      <button
+        mat-mini-fab
+        [ngClass]="status"
+        aria-label="Example icon button with a menu icon"
+      ></button>
+    </div>
+    <section>
+      <i class="fa-solid fa-tag fa-2x" [ngClass]="priority"> </i>
+    </section>
+  </div>
+
+  <section class="flex-grow-1 mt-2">Content : {{ todo.content }}</section>
+
+  <div class="ax-other-infos">
+    <section>
+      <i class="fa-solid fa-bell ax-infos"></i
+      ><span class="ax-date-info"></span>Closing :
+      {{ todo.closing | date: "shortTime" }}
+    </section>
+    <section>
+      <i class="fa-solid fa-calendar ax-infos"></i
+      ><span class="ax-date-info"
+        >Created At : {{ todo.createdAt | date: "shortTime" }}</span
+      >
+    </section>
+    <section class="r-flex">
+      <div class="ax-footer flex-grow-1">
+        <i class="fa-solid fa-calendar ax-infos"></i
+        ><span class="ax-date-info"
+          >Updated At : {{ todo.updatedAt | date: "shortTime" }}</span
+        >
+      </div>
+
+      <a (click)="edit(todo)"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a href=""><i class="fa-solid fa-trash ml-1"></i></a>
+    </section>
+  </div>
 </div>

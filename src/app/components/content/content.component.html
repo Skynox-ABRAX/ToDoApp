@@ -1,4 +1,4 @@
-<div class="content c-flex">
+<div class="content c-flex mb-4">
   <section>
     <div class="section-header r-flex txt-left pl-2">
       <h2 class="mt-0 mb-0">Summary</h2>
@@ -13,17 +13,19 @@
             matBadge="8"
             matBadgePosition="before"
             matBadgeColor="accent"
+            (click)="getFilter($event)"
           >
             Started
           </button>
         </li>
         <li class="mr-2">
           <button
+            class="ax-inprogress"
             mat-raised-button
-            color="primary"
             matBadge="8"
             matBadgePosition="before"
             matBadgeColor="accent"
+            (click)="getFilter($event)"
           >
             InProgress
           </button>
@@ -31,10 +33,11 @@
         <li class="mr-2">
           <button
             mat-raised-button
-            color="primary"
+            class="ax-closed"
             matBadge="8"
             matBadgePosition="before"
             matBadgeColor="accent"
+            (click)="getFilter($event)"
           >
             Closed
           </button>
@@ -42,10 +45,11 @@
         <li>
           <button
             mat-raised-button
-            color="primary"
+            class="ax-canceled"
             matBadge="8"
             matBadgePosition="before"
             matBadgeColor="accent"
+            (click)="getFilter($event)"
           >
             Canceled
           </button>
@@ -54,5 +58,8 @@
     </div>
   </section>
 
-  <app-list class="r-flex mt-4"></app-list>
+  <app-list
+    class="r-flex mt-4"
+    [events]="eventParentSubject.asObservable()"
+  ></app-list>
 </div>

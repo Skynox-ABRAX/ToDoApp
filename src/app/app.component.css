@@ -1,0 +1,12 @@
+.ax-overlay {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  background-color: rgba(76, 216, 162, 0.2);
+}
+
+nav {
+  align-items: center;
+}

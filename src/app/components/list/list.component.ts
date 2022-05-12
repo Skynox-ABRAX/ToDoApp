@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
@@ -9,7 +10,10 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit
 {
-  
+  private eventsSubscription: Subscription;
+
+  @Input() events: Observable<string>;
+
   todos: todo[];
 
 
@@ -19,7 +23,12 @@ export class ListComponent implements OnInit
   {
 
     this.todos = this.todoService.getAllTodo();
+    this.eventsSubscription = this.events.subscribe(event => this.todos=this.todoService.getTodoByStatus(event.toString()))
 
+  }
+
+  ngOnDestroy() {
+    this.eventsSubscription.unsubscribe();
   }
 
 }

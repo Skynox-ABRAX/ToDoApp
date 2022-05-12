@@ -8,6 +8,7 @@ export interface ITodo
     content: string;
     status: status;
     priority: priority;
+    closing: Date;
     createdAt: Date;
     updatedAt: Date;
 

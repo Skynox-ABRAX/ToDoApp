@@ -8,14 +8,14 @@ html, body { height: auto; min-height: 100% }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: linear-gradient(to top right, #434343 0%, black 100%);
+    background: linear-gradient(to top right, rgb(226, 231, 224)0%,rgb(190, 197, 189)100%);
     background-repeat: no-repeat;
 }
 
 
 .title{
 
-    color: black;
+    color: white;
     font-size: 2rem;
     line-height: 4rem;
     text-shadow: 2px 2px rgb(0,0,0,0.2);
@@ -23,27 +23,34 @@ body {
 }
 
 .navbar{
-    background-color: var(--ax-primary);
-    box-shadow: 0 0 0.7em 0.3em rgba(var(--ax-rgb-primary), 0.5);
-    border-bottom: 3px solid var(--ax-primary-400);
+    background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
+    /*box-shadow: 0 0 0.7em 0.3em rgb(240, 167, 65, 0.5);*/
+    /*border-bottom: 2px solid rgb(240, 167, 65);*/
     height: 4rem;
+    transition: background 200ms ease-in;
+}
+.navbar:hover{
+    background: linear-gradient(to top,  rgb(243, 175, 80) 0%, rgb(255, 177, 66) 100%) ;
+    transition: background 200ms ease-in;
 }
 
 .ax-icon{
     width: 4rem;
     height: 4rem;
-    background-color: var(--ax-primary);
+    background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
     color: black;
     position: relative;
-    border: 5px solid var(--ax-primary-400);
-    box-shadow: 0 0 0.3em 0.2em rgb(184,50,121);
+    /*border: 3px solid var(--ax-primary-400);*/
+    box-shadow: 0 0 0.2em 0.1em rgb(236, 232, 228);
+    transition: background 200ms ease-in;
     
 
 }
 
 .ax-icon:hover{
+    background: linear-gradient(to top, rgb(109, 33, 79) 0%, rgb(128, 50, 97)0100%) ;
     transform: rotateY(360deg);
-    transition: transform 500ms ease-in;
+    transition: transform 500ms ease-in, background 200ms ease-in;
 }
 
 
@@ -52,16 +59,17 @@ body {
    @extend %pos-center;
    width: 30px;
    height: 30px;
+   color: white;
 
 }
 
 .ax-list{
     width: 110px;
     height: auto;
-    background-color: rgb(24, 16, 16);
-    box-shadow: inset -2px -2px 0 0.2em rgba(14, 11, 11, 0.5);
+    background-color: rgb(44, 58, 71);
+    box-shadow:  0px 0px 0.30em 0.2em rgba(12, 128, 128, 0.5);
     border: rgba(0,0,0,0.3);
-    border-radius: 55px;
+    border-radius:0.5rem;
 }
 
 .main-content{
@@ -71,3 +79,19 @@ body {
 
 
 }
+
+.ax-low{
+   
+    color: var(--ax-low); 
+
+}
+
+.ax-normal{
+    color: var(--ax-normal); 
+
+}
+
+.ax-high{
+    color: var(--ax-high);
+}
+

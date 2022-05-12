@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Event } from '@angular/router';
+import { Subject } from 'rxjs';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-content',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  eventParentSubject: Subject<string> = new Subject<string>();
+
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+  }
+
+  getFilter(event: any)
+  {
+    this.eventParentSubject.next(event.target.innerText);
   }
 
 }

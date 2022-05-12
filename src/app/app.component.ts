@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
+import { events } from './enums/eventsEnum';
+import { TodoService } from './services/todo.service';
 
 
 
@@ -12,8 +14,11 @@ export class AppComponent {
   title = 'ToDoApp';
   campaignOne: FormGroup;
   campaignTwo: FormGroup;
+  isVisible: boolean = true;
 
-  constructor() {
+  @ViewChild('overlay') overlay: ElementRef;
+
+  constructor(elem: ElementRef, renderer: Renderer2, private todoService: TodoService) {
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
@@ -28,4 +33,18 @@ export class AppComponent {
       end: new FormControl(new Date(year, month, 19)),
     });
   }
+
+  ngOnInit()
+  {
+    this.todoService.on(events.closeOverlay, (() => this.isVisible = true));
+  }
+
+  closeOverlay()
+  {
+    this.isVisible = false;
+    console.log("from app");
+  }
+
+
+
 }

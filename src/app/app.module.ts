@@ -5,18 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonModule } from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-import {MatBadgeModule} from '@angular/material/badge';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
 import { MenuComponent } from './components/menu/menu.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { ContentComponent } from './components/content/content.component';
 import { ListComponent } from './components/list/list.component';
 import { DatePipePipe } from './pipes/date-pipe.pipe';
+import { OverlayComponent } from './components/overlay/overlay.component';
+import { EditComponent } from './components/edit/edit.component';
+import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+import { FormBuilder } from '@angular/forms';
 
 
 
@@ -28,20 +27,17 @@ import { DatePipePipe } from './pipes/date-pipe.pipe';
     AsideComponent,
     ContentComponent,
     ListComponent,
-    DatePipePipe
+    DatePipePipe,
+    OverlayComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatNativeDateModule,
-    MatInputModule,
-    MatButtonModule,
-    MatBadgeModule
+    AngularMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
 
 
 
@@ -49,7 +45,7 @@ import { DatePipePipe } from './pipes/date-pipe.pipe';
   
 
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
