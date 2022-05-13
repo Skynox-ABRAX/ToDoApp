@@ -4,7 +4,7 @@ mat-stepper{
 }
 
 .mat-form-field{
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .ax-edit{
@@ -14,8 +14,13 @@ mat-stepper{
 a{
     align-self: flex-end;
     margin-top: 1rem;
-    margin-right: 1rem;
+    margin-right: -1rem;
     width: 4rem;
     cursor: pointer;
+    position: fixed;
+}
+
+.ax-content{
+    width: 50%;
 }
 

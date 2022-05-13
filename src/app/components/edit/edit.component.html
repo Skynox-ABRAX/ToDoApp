@@ -1,6 +1,6 @@
-<form action="">
+<form action="" id="form-edit">
   <div>
-    <input id="id" name="id" type="hidden" value="" />
+    <input id="id" type="hidden" [(ngModel)]="currentTodo.id" name="id" />
   </div>
   <div class="c-flex ax-edit">
     <a (click)="closeOverlay()"
@@ -11,7 +11,12 @@
         <ng-template matStepLabel>Choose the title of the task</ng-template>
         <mat-form-field class="example-full-width mt-2" appearance="fill">
           <mat-label>Title</mat-label>
-          <input matInput placeholder="Ex. It makes me feel..." />
+          <input
+            matInput
+            placeholder="Ex. It makes me feel..."
+            [(ngModel)]="currentTodo.title"
+            name="title"
+          />
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Next</button>
@@ -20,9 +25,17 @@
 
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>Content of the task</ng-template>
-        <mat-form-field class="example-full-width mt-2" appearance="fill">
+        <mat-form-field
+          class="example-full-width mt-2 ax-content"
+          appearance="fill"
+        >
           <mat-label>content</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+          <textarea
+            matInput
+            placeholder="Ex. It makes me feel..."
+            [(ngModel)]="currentTodo.content"
+            name="content"
+          ></textarea>
         </mat-form-field>
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -40,6 +53,8 @@
               [matDatepicker]="picker"
               (dateInput)="addEvent('input', $event)"
               (dateChange)="addEvent('change', $event)"
+              [(ngModel)]="currentTodo.closing"
+              name="closing"
             />
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle
@@ -49,7 +64,12 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
-          <ngx-mat-timepicker class="ml-2 mt-2"> </ngx-mat-timepicker>
+          <ngx-mat-timepicker
+            class="ml-2 mt-2"
+            [(ngModel)]="currentTodo.closing"
+            name="hours"
+          >
+          </ngx-mat-timepicker>
         </div>
         <div class="mt-2">
           <button mat-button matStepperPrevious>Back</button>
@@ -61,7 +81,7 @@
         <ng-template matStepLabel>Choose a status</ng-template>
         <mat-form-field class="example-full-width mt-2" appearance="fill">
           <mat-label>Select a status</mat-label>
-          <mat-select [(value)]="selectedStatus">
+          <mat-select [(value)]="currentTodo.status">
             <mat-option>None</mat-option>
             <mat-option value="Started">Started</mat-option>
             <mat-option value="InProgress">In Progress</mat-option>
@@ -79,11 +99,11 @@
         <ng-template matStepLabel>Choose a priority</ng-template>
         <mat-form-field class="example-full-width mt-2" appearance="fill">
           <mat-label>Select a prority</mat-label>
-          <mat-select [(value)]="selectedPriority">
+          <mat-select [(value)]="currentTodo.priority">
             <mat-option>None</mat-option>
-            <mat-option value="low">Low</mat-option>
-            <mat-option value="normal">Normal</mat-option>
-            <mat-option value="high">High</mat-option>
+            <mat-option value="Low">Low</mat-option>
+            <mat-option value="Normal">Normal</mat-option>
+            <mat-option value="High">High</mat-option>
           </mat-select>
         </mat-form-field>
 

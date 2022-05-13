@@ -13,4 +13,10 @@
   <div></div>
 </div>
 
-<app-overlay class="ax-overlay" (eventEmitter)="closeOverlay()" *ngIf="isVisible"> </app-overlay>
+<app-overlay
+  class="ax-overlay"
+  (eventEmitter)="closeOverlay()"
+  *ngIf="isVisible"
+  [currentTodo]="currentTodo"
+>
+</app-overlay>

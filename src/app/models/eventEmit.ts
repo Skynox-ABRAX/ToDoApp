@@ -1,12 +1,14 @@
+import { events } from "../enums/eventsEnum";
+import { todo } from "./todo";
 
 
 
 export class eventEmit 
 {
-    name: string;
-    value: string;
+    name: events;
+    value: todo;
 
-    constructor(name: string, value: string)
+    constructor(name: events, value: todo)
     {
 
         this.name = name;

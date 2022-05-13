@@ -1,6 +1,7 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import { events } from './enums/eventsEnum';
+import { todo } from './models/todo';
 import { TodoService } from './services/todo.service';
 
 
@@ -14,7 +15,8 @@ export class AppComponent {
   title = 'ToDoApp';
   campaignOne: FormGroup;
   campaignTwo: FormGroup;
-  isVisible: boolean = true;
+  isVisible: boolean = false;
+  currentTodo: todo;
 
   @ViewChild('overlay') overlay: ElementRef;
 
@@ -36,7 +38,7 @@ export class AppComponent {
 
   ngOnInit()
   {
-    this.todoService.on(events.closeOverlay, (() => this.isVisible = true));
+    this.todoService.on(events.closeOverlay, ((td: todo) => { console.log(td); this.isVisible = true; this.currentTodo = td; }));
   }
 
   closeOverlay()

@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgModel } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { todo } from 'src/app/models/todo';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class EditComponent implements OnInit {
   secondFormGroup: FormGroup;
   events: string[] = [];
   myTimePicker: any;
+  @Input() currentTodo?: todo;
 
 
   constructor(private _formBuilder: FormBuilder) {}
@@ -30,6 +32,13 @@ export class EditComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required],
     });
+
+    console.log(this.currentTodo);
+  }
+
+  ngOnChanges()
+  {
+    console.log(this.currentTodo);
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {

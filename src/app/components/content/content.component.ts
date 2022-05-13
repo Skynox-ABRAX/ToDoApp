@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '@angular/router';
 import { Subject } from 'rxjs';
+import { todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
@@ -15,7 +16,9 @@ export class ContentComponent implements OnInit {
 
   constructor(private todoService: TodoService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+
   }
 
   getFilter(event: any)

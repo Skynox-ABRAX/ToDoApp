@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { todo } from 'src/app/models/todo';
 
 @Component({
   selector: 'app-overlay',
@@ -7,11 +8,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class OverlayComponent implements OnInit
 {
+  @Input() currentTodo: todo;
   @Output() eventEmitter: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    
+    console.log(this.currentTodo);
   }
 
   closeOverlay()

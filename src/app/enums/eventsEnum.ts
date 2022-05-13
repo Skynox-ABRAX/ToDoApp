@@ -1,4 +1,5 @@
 export enum events
 {
-    'closeOverlay'
+    'closeOverlay',
+    'deleteTodo'
 }

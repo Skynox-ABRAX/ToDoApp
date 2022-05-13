@@ -13,16 +13,18 @@ import { todo } from '../models/todo';
 export class TodoService implements ITodoService {
 
   private _todos: todo[];
-  private subject$ = new Subject()
+  private subject$ = new Subject<eventEmit>()
 
   constructor() { }
 
-  emit(event: string) {
+  emit(event: eventEmit) {
     this.subject$.next(event); 
   } 
 
   on(event: events, action: any): Subscription {
-    return this.subject$.pipe().subscribe(action);
+    return this.subject$.pipe(
+      filter((e: eventEmit) => e.name == event),
+  map((e: eventEmit) => e.value)).subscribe(action);
     }
 
   

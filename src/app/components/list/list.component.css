@@ -1,6 +1,9 @@
 :host {
   align-self: stretch;
+}
+:host .ax-content-list {
   flex-wrap: wrap;
-  gap: 2rem;
+  width: 100%;
   justify-content: center;
+  gap: 2rem;
 }
