@@ -28,3 +28,7 @@
   transform: translate3d(-50%, -50%, 0);
   color: black;
 }
+:host .ax-content-pomodoros {
+  padding: 1rem;
+  gap: 2rem;
+}

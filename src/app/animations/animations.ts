@@ -1,7 +1,7 @@
 import { animate, animation, query, stagger, style, transition, trigger } from "@angular/animations";
 
-export const showTodoAnimation = animation([
-    trigger('showTilesTodo', [
+export const showTodoAnimation = [
+  trigger('showTilesTodo', [
         transition('* => *', [ // each time the binding value changes
           query(':leave', [
             stagger(100, [
@@ -16,5 +16,4 @@ export const showTodoAnimation = animation([
           ],{ optional: true })
         ])
       ])
-  
-    ])
+    ]   

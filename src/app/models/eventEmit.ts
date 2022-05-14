@@ -6,9 +6,9 @@ import { todo } from "./todo";
 export class eventEmit 
 {
     name: events;
-    value: todo;
+    value: any;
 
-    constructor(name: events, value: todo)
+    constructor(name: events, value: any)
     {
 
         this.name = name;

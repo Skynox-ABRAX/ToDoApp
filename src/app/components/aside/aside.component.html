@@ -2,3 +2,12 @@
   <h2 class="mt-0 mb-0">Pomodoro</h2>
   <a href=""><i class="fa-solid fa-xmark fa-2x"></i></a>
 </header>
+<section class="ml-3">
+  <a (click)="addPomodoro()"><i class="fa-solid fa-plus"></i></a>
+</section>
+<section
+  class="c-flex ax-content-pomodoros"
+  [@showTilesTodo]="pomodoros.length"
+>
+  <app-pomodoro *ngFor="let pom of pomodoros" [pomodoro]="pom"></app-pomodoro>
+</section>

@@ -6,6 +6,7 @@
     min-width: 20%;
     max-width: 20rem;
 
+
     
     .ax-header{
         background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
@@ -31,6 +32,10 @@
         left: 50%;
         transform: translate3d(-50%, -50%,0);
         color: black;
+    }
+    .ax-content-pomodoros{
+        padding: 1rem;
+        gap: 2rem;
     }
 
     

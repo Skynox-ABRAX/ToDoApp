@@ -10,7 +10,7 @@
           <button
             mat-raised-button
             color="primary"
-            matBadge="8"
+            [matBadge]="cat.started"
             matBadgePosition="before"
             matBadgeColor="accent"
             (click)="getFilter($event)"
@@ -22,7 +22,7 @@
           <button
             class="ax-inprogress"
             mat-raised-button
-            matBadge="8"
+            [matBadge]="cat.inProgres"
             matBadgePosition="before"
             matBadgeColor="accent"
             (click)="getFilter($event)"
@@ -34,7 +34,7 @@
           <button
             mat-raised-button
             class="ax-closed"
-            matBadge="8"
+            [matBadge]="cat.closed"
             matBadgePosition="before"
             matBadgeColor="accent"
             (click)="getFilter($event)"
@@ -46,7 +46,7 @@
           <button
             mat-raised-button
             class="ax-canceled"
-            matBadge="8"
+            [matBadge]="cat.canceled"
             matBadgePosition="before"
             matBadgeColor="accent"
             (click)="getFilter($event)"

@@ -1,0 +1,21 @@
+:host{
+    font-size: 0.9rem;
+    color: white;
+
+    .ax-content-header{
+        gap: 1rem;
+    }
+
+    .ax-trash{
+        align-self: flex-end;
+    }
+
+    .ax-green{
+        color: rgb(22, 160, 133);
+    }
+
+    .ax-red{
+        color: rgb(192, 57, 43)
+    }
+
+}

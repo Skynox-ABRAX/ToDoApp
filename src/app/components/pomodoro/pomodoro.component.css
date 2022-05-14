@@ -1,0 +1,16 @@
+:host {
+  font-size: 0.9rem;
+  color: white;
+}
+:host .ax-content-header {
+  gap: 1rem;
+}
+:host .ax-trash {
+  align-self: flex-end;
+}
+:host .ax-green {
+  color: #16a085;
+}
+:host .ax-red {
+  color: #c0392b;
+}

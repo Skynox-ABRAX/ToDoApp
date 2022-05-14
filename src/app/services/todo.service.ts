@@ -4,8 +4,10 @@ import { events } from '../enums/eventsEnum';
 import { priority } from '../enums/priorityEnum';
 import { status } from '../enums/statusEnum';
 import { ITodoService } from '../interface/ITodoService';
+import { category } from '../models/category';
 import { eventEmit } from '../models/eventEmit';
 import { todo } from '../models/todo';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,7 @@ export class TodoService implements ITodoService {
 
   private _todos: todo[];
   private subject$ = new Subject<eventEmit>()
+  category: category;
 
   constructor() { }
 
@@ -36,6 +39,21 @@ export class TodoService implements ITodoService {
   getTodoByStatus(state: string): todo[]
   {
     return this._todos.filter(x => x.status === state);
+  }
+
+  getNumberItemsByCategory()
+  {
+    this.getAllTodo();
+    var cat = new category({
+      started: this._todos.filter(x => x.status === status.started).length,
+      inProgres: this._todos.filter(x => x.status === status.inProgress).length,
+      closed: this._todos.filter(x => x.status === status.closed).length,
+      canceled: this._todos.filter(x => x.status === status.Canceled).length
+  });
+
+    return cat;
+
+
   }
 
 

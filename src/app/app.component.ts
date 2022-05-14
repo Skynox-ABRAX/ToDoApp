@@ -1,6 +1,7 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import { events } from './enums/eventsEnum';
+
 import { todo } from './models/todo';
 import { TodoService } from './services/todo.service';
 
@@ -39,6 +40,8 @@ export class AppComponent {
   ngOnInit()
   {
     this.todoService.on(events.closeOverlay, ((td: todo) => { console.log(td); this.isVisible = true; this.currentTodo = td; }));
+    this.todoService.on(events.addTodo, ((td: todo) => { this.isVisible = true; this.currentTodo = td }));
+
   }
 
   closeOverlay()

@@ -16,6 +16,7 @@ import { OverlayComponent } from './components/overlay/overlay.component';
 import { EditComponent } from './components/edit/edit.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { FormBuilder } from '@angular/forms';
+import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
 
 
 
@@ -29,7 +30,8 @@ import { FormBuilder } from '@angular/forms';
     ListComponent,
     DatePipePipe,
     OverlayComponent,
-    EditComponent
+    EditComponent,
+    PomodoroComponent
   ],
   imports: [
     BrowserModule,

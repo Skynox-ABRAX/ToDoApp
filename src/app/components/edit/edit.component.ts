@@ -1,7 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgModel } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { events } from 'src/app/enums/eventsEnum';
+import { eventEmit } from 'src/app/models/eventEmit';
 import { todo } from 'src/app/models/todo';
+import { TodoService } from 'src/app/services/todo.service';
 
 
 @Component({
@@ -23,7 +26,7 @@ export class EditComponent implements OnInit {
   @Input() currentTodo?: todo;
 
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private todoService: TodoService) {}
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -51,5 +54,15 @@ export class EditComponent implements OnInit {
     console.log("hello");
     this.eventEmitter.emit();
   }
+
+  saveTodo()
+  {
+    
+    this.todoService.emit(new eventEmit(events.addTodo, this.currentTodo));
+
+
+  }
+
+
 }
 
