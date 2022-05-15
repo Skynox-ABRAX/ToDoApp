@@ -1,5 +1,19 @@
 <ng-container>
-  <div [@showTilesTodo]="todos.length" class="r-flex ax-content-list">
-    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  <div class="c-flex">
+    <div
+      [@showTilesTodo]="todos.length"
+      class="r-flex ax-content-list flex-grow-1"
+    >
+      <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+    </div>
+    <mat-paginator
+      (page)="onChangePage($event)"
+      [length]="todos2.length"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      class="mt-4"
+      aria-label="Select page"
+    >
+    </mat-paginator>
   </div>
 </ng-container>

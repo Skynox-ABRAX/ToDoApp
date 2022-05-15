@@ -2,9 +2,11 @@
   background-color: #2c3a47;
   box-shadow: 0px 0px 0.3em 0.2em rgba(12, 128, 128, 0.5);
   border-radius: 0.5rem;
-  height: auto;
   min-width: 20%;
   max-width: 20rem;
+  color: white;
+  align-self: flex-start;
+  padding-bottom: 2rem;
 }
 :host .ax-header {
   background: linear-gradient(to top, #803261 0%, #6d214f 100%);
@@ -31,4 +33,7 @@
 :host .ax-content-pomodoros {
   padding: 1rem;
   gap: 2rem;
+}
+:host .fa-plus:before {
+  color: white;
 }

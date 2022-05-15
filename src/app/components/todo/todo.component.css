@@ -1,10 +1,29 @@
 :host {
-  width: 40%;
+  min-width: calc((100% - 2rem) / 2);
+  max-width: calc((100% - 2rem) / 2);
   background: linear-gradient(to top right, #cad3c8 0%, #98a097 100%);
   padding: 1rem;
   border-radius: 0.2rem;
   /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
   font-size: 1.2rem;
+}
+:host .mat-card-title, :host .mat-card-actions, :host mat-card {
+  display: flex;
+  gap: 1rem;
+}
+:host mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+:host .mat-card-actions {
+  gap: 0;
+  justify-content: flex-end;
+}
+:host mat-card {
+  height: 100%;
+}
+:host h2 {
+  font-size: 1.1rem;
 }
 :host .todo {
   row-gap: 1rem;
@@ -18,14 +37,20 @@
   gap: 1rem;
 }
 :host .mat-mini-fab {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+:host .mat-button {
+  padding: 0;
+  width: 3rem;
+  min-width: 3rem;
+  margin: 0;
 }
 :host .ax-date-info {
   font-size: 0.8rem;
 }
 :host .ax-other-infos {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 :host .ax-other-infos section {
   margin-bottom: 0.5rem;
@@ -34,7 +59,7 @@
   padding-left: 0.5rem;
 }
 :host .ax-other-infos section i {
-  color: white;
+  color: black;
 }
 :host .ax-other-infos section .ax-infos {
   font-size: 0.8rem;

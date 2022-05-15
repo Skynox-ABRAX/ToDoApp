@@ -42,15 +42,16 @@ body {
     position: relative;
     /*border: 3px solid var(--ax-primary-400);*/
     box-shadow: 0 0 0.2em 0.1em rgb(236, 232, 228);
-    transition: background 200ms ease-in;
+    transform: scale(1);
+    transition: transform 150ms ease-in, background 200ms ease-in;
     
 
 }
 
 .ax-icon:hover{
     background: linear-gradient(to top, rgb(109, 33, 79) 0%, rgb(128, 50, 97)0100%) ;
-    transform: rotateY(360deg);
-    transition: transform 500ms ease-in, background 200ms ease-in;
+    transform: scale(1.2);
+    transition: transform 150ms ease-in, background 200ms ease-in;
 }
 
 

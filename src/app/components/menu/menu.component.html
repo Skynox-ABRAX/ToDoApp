@@ -9,7 +9,7 @@
     </li>
 
     <li>
-      <a href=""
+      <a (click)="showOrHideTodoPanel()"
         ><i class="fa-solid fa-list-check fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
@@ -19,8 +19,13 @@
       </a>
     </li>
     <li>
-      <a href=""
+      <a (click)="showOrHidePomodoroPanel()"
         ><i class="fa-solid fa-clock fa-3x ax-icon ax-br-circle mb-1"></i
+      ></a>
+    </li>
+    <li>
+      <a (click)="switchPanel()"
+        ><i class="fa-solid fa-repeat fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
     <li>

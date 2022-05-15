@@ -1,16 +1,22 @@
 <div class="container">
   <nav class="navbar mb-4 r-flex">
     <h1 class="title txt-left mt-0 pl-4 mb-0 flex-grow-1">ToDo App</h1>
-    <mat-slide-toggle class="mr-4">Dark Theme</mat-slide-toggle>
+    <mat-slide-toggle class="mr-4" (change)="toggle($event)"
+      >Dark Theme</mat-slide-toggle
+    >
   </nav>
 </div>
 
 <div class="main-content r-flex">
   <div></div>
   <app-menu></app-menu>
-  <app-content></app-content>
-  <app-aside> </app-aside>
-  <div></div>
+  <app-content
+    *ngIf="isVisibleTodoPanel"
+    [ngClass]="order ? 'ax-item' : ''"
+  ></app-content>
+  <app-aside *ngIf="isVisiblePomodoroPanel" [ngClass]="order ? '' : 'ax-item'">
+  </app-aside>
+  <div class="ax-item-3"></div>
 </div>
 
 <app-overlay

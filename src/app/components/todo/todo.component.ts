@@ -35,6 +35,7 @@ export class TodoComponent implements OnInit {
   delete(todo:todo) {
     this.todoService.emit(new eventEmit(events.deleteTodo, todo));
   }
+  
 
  
 

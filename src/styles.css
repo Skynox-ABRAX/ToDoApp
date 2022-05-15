@@ -26,9 +26,9 @@ body {
   --ax-progress: rgb(196, 229, 56);
   --ax-closed: rgb(237, 76, 103);
   --ax-canceled: rgb(247, 183, 49);
-  --ax-low: rgb(32, 191, 107);
-  --ax-normal:rgb(250, 130, 49);
-  --ax-high:rgb(235, 59, 90);
+  --ax-low: rgb(253, 167, 223);
+  --ax-normal:rgb(32, 191, 107);
+  --ax-high:rgb(234, 32, 39);
   --ax-primary-400: rgb(184, 41, 124);
   --ax-rgb-primary: 201,23,127;
 }
@@ -475,13 +475,14 @@ body {
   position: relative;
   /*border: 3px solid var(--ax-primary-400);*/
   box-shadow: 0 0 0.2em 0.1em #ece8e4;
-  transition: background 200ms ease-in;
+  transform: scale(1);
+  transition: transform 150ms ease-in, background 200ms ease-in;
 }
 
 .ax-icon:hover {
   background: linear-gradient(to top, #6d214f 0%, #803261 100%);
-  transform: rotateY(360deg);
-  transition: transform 500ms ease-in, background 200ms ease-in;
+  transform: scale(1.2);
+  transition: transform 150ms ease-in, background 200ms ease-in;
 }
 
 .ax-icon:before {

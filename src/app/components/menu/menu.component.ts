@@ -11,7 +11,9 @@ import { status } from '../../enums/statusEnum';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit
+{
+  
 
   constructor(private todoService: TodoService) { }
 
@@ -25,6 +27,21 @@ export class MenuComponent implements OnInit {
   {
 
     this.todoService.emit(new eventEmit(events.addTodo, new todo({ id: 0, title: '', content: '', status: status.started, priority: priority.normal, closing: new Date(), updatedAt: new Date(), createdAt: new Date()})));
+  }
+
+  showOrHidePomodoroPanel()
+  {
+    this.todoService.emit(new eventEmit(events.showOrHidePanelPomodoro, todo));
+  }
+
+  showOrHideTodoPanel()
+  {
+    this.todoService.emit(new eventEmit(events.showOrHideTodoPanel, todo));
+  }
+
+  switchPanel()
+  {
+    this.todoService.emit(new eventEmit(events.switchPanel, todo));
   }
 
 

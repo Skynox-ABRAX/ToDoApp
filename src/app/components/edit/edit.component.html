@@ -50,6 +50,28 @@
             <mat-label>Choose the date of closing</mat-label>
             <input
               matInput
+              [ngxMatDatetimePicker]="picker"
+              placeholder="Choose a date & time"
+              [value]="currentTodo.closing"
+              [(ngModel)]="currentTodo.closing"
+              name="closing"
+            />
+
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="$any(picker)"
+            ></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+          </mat-form-field>
+        </div>
+        <div class="mt-2">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+
+      <!-- <input
+              matInput
               [matDatepicker]="picker"
               (dateInput)="addEvent('input', $event)"
               (dateChange)="addEvent('change', $event)"
@@ -65,17 +87,13 @@
           </mat-form-field>
 
           <ngx-mat-timepicker
+            (timeChanged)="onChangeHour($event)"
+            (timeSet)="onSetHour()"
+            (hourSelected)="hourSelected($event)"
+            [defaultTime]="[12, 00]"
             class="ml-2 mt-2"
-            [(ngModel)]="currentTodo.closing"
-            name="hours"
           >
-          </ngx-mat-timepicker>
-        </div>
-        <div class="mt-2">
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </mat-step>
+          </ngx-mat-timepicker> -->
 
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>Choose a status</ng-template>

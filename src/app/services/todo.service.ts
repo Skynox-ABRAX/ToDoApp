@@ -56,8 +56,14 @@ export class TodoService implements ITodoService {
 
   }
 
+  checkIfTodoExists(todo: todo, todos: todo[]):boolean
+  {
 
-  
+    return (todos.indexOf(todo) === -1);
+  }
+
+
+
   getAllTodo(): todo[]
   {
 

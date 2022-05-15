@@ -4,5 +4,8 @@ export enum events
     'deleteTodo',
     'addTodo',
     'saveTodo',
-    'deletePomodoro'
+    'deletePomodoro',
+    'showOrHidePanelPomodoro',
+    'showOrHideTodoPanel',
+    'switchPanel'
 }

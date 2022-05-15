@@ -23,6 +23,7 @@ export class EditComponent implements OnInit {
   secondFormGroup: FormGroup;
   events: string[] = [];
   myTimePicker: any;
+  myTime: Date;
   @Input() currentTodo?: todo;
 
 
@@ -37,6 +38,7 @@ export class EditComponent implements OnInit {
     });
 
     console.log(this.currentTodo);
+    this.myTime = this.currentTodo?.closing;
   }
 
   ngOnChanges()
@@ -55,6 +57,7 @@ export class EditComponent implements OnInit {
     this.eventEmitter.emit();
   }
 
+ 
   saveTodo()
   {
     

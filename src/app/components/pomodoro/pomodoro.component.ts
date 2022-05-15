@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { DateFilterFn } from '@angular/material/datepicker';
+import { ToastrService } from 'ngx-toastr';
 import { map, Observable, timer, take } from 'rxjs';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
@@ -38,14 +39,14 @@ export class PomodoroComponent implements OnInit {
 //   );
 // }
 
-  constructor(private changeDetector: ChangeDetectorRef, private todoService: TodoService)
+  constructor(private changeDetector: ChangeDetectorRef, private todoService: TodoService, private toastr: ToastrService)
   { 
 
   }
 
   ngOnInit(): void
   {
-    this.timing2 = new Date(1970, 1, 1, 0, 25, 0, 0);
+    this.timing2 = new Date(1970, 1, 1, 0, 0, 10, 0);
     this.counter = this.timing2.getTime();
 
   }
@@ -61,9 +62,11 @@ export class PomodoroComponent implements OnInit {
         this.timing2 = new Date((this.timing2.getTime() - 1000));
         console.log(this.timing2);
         this.statusClock = 'ax-red';
-        if (this.timing2.getTime() == this.counter - 1000*60*25) {
+        if (this.timing2.getTime() == this.counter - 10000) {
           clearInterval(this.id);
+          this.toastr.success("The pomodoro is done!");
           this.statusClock = 'ax-green';
+
         }
       }, 1000);
 

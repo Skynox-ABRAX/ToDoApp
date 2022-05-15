@@ -2,9 +2,11 @@
     background-color: rgb(44, 58, 71);
     box-shadow:  0px 0px 0.30em 0.2em rgba(12, 128, 128, 0.5);
     border-radius: 0.5rem;
-    height: auto;
     min-width: 20%;
     max-width: 20rem;
+    color: white;
+    align-self: flex-start;
+    padding-bottom: 2rem;
 
 
     
@@ -36,6 +38,10 @@
     .ax-content-pomodoros{
         padding: 1rem;
         gap: 2rem;
+    }
+
+    .fa-plus:before{
+        color: white;
     }
 
     

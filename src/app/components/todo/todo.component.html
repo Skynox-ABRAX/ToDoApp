@@ -1,6 +1,6 @@
-<div class="todo c-flex">
-  <div class="section-header r-flex">
-    <h3 class="flex-grow-1 mt-0 mb-0">Title : {{ todo.title }}</h3>
+<mat-card class="example-card c-flex">
+  <mat-card-title class="r-flex">
+    <h2 class="flex-grow-1 mt-0 mb-0">Title : {{ todo.title }}</h2>
     <div class="ax-status">
       <button
         mat-mini-fab
@@ -9,34 +9,39 @@
       ></button>
     </div>
     <section>
-      <i class="fa-solid fa-tag fa-2x" [ngClass]="priority"> </i>
+      <i class="fa-solid fa-tag" [ngClass]="priority"> </i>
     </section>
-  </div>
-
-  <section class="flex-grow-1 mt-2">Content : {{ todo.content }}</section>
-
-  <div class="ax-other-infos">
-    <section>
-      <i class="fa-solid fa-bell ax-infos"></i
-      ><span class="ax-date-info"></span>Closing :
-      {{ todo.closing | date: "shortTime" }}
-    </section>
-    <section>
-      <i class="fa-solid fa-calendar ax-infos"></i
-      ><span class="ax-date-info"
-        >Created At : {{ todo.createdAt | date: "shortTime" }}</span
-      >
-    </section>
-    <section class="r-flex">
-      <div class="ax-footer flex-grow-1">
+  </mat-card-title>
+  <mat-card-content class="mt-2 flex-grow-1">
+    <p class="flex-grow-1">Content : {{ todo.content }}</p>
+    <div class="ax-other-infos">
+      <section>
+        <i class="fa-solid fa-bell ax-infos"></i
+        ><span class="ax-date-info"></span>Closing :
+        {{ todo.closing | date: "MMM d, y, H:mm" }}
+      </section>
+      <section>
         <i class="fa-solid fa-calendar ax-infos"></i
         ><span class="ax-date-info"
-          >Updated At : {{ todo.updatedAt | date: "shortTime" }}</span
+          >Created At : {{ todo.createdAt | date: "MMM d, y, H:mm" }}</span
         >
-      </div>
-
-      <a (click)="edit(todo)"><i class="fa-solid fa-pen-to-square"></i></a>
-      <a (click)="delete(todo)"><i class="fa-solid fa-trash ml-1"></i></a>
-    </section>
-  </div>
-</div>
+      </section>
+      <section class="r-flex">
+        <div class="ax-footer flex-grow-1">
+          <i class="fa-solid fa-calendar ax-infos"></i
+          ><span class="ax-date-info"
+            >Updated At : {{ todo.updatedAt | date: "MMM d, y, H:mm" }}</span
+          >
+        </div>
+      </section>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="r-flex">
+    <button mat-button (click)="edit(todo)">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+    <button mat-button (click)="delete(todo)">
+      <i class="fa-solid fa-trash ml-1"></i>
+    </button>
+  </mat-card-actions>
+</mat-card>
