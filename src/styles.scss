@@ -8,10 +8,15 @@ html, body { height: auto; min-height: 100% }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: linear-gradient(to top right, rgb(226, 231, 224)0%,rgb(190, 197, 189)100%);
+    // background: linear-gradient(to top right, rgb(226, 231, 224)0%,rgb(190, 197, 189)100%);
     background-repeat: no-repeat;
+    background-color: var(--ax-background);
 }
 
+.img{
+    opacity: 0.6;
+    height: 40px;
+}
 
 .title{
 
@@ -22,26 +27,28 @@ body {
 
 }
 
+nav{
+    background-image: url("/assets/background.png");
+}
+
 .navbar{
-    background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
+    background: url("/assets/background.png") , var(--ax-primary-boxshadow);
     /*box-shadow: 0 0 0.7em 0.3em rgb(240, 167, 65, 0.5);*/
     /*border-bottom: 2px solid rgb(240, 167, 65);*/
     height: 4rem;
     transition: background 200ms ease-in;
 }
-.navbar:hover{
-    background: linear-gradient(to top,  rgb(243, 175, 80) 0%, rgb(255, 177, 66) 100%) ;
-    transition: background 200ms ease-in;
-}
+
 
 .ax-icon{
     width: 4rem;
     height: 4rem;
-    background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
+    background: var(--ax-secondary-boxshadow) ;
     color: black;
     position: relative;
     /*border: 3px solid var(--ax-primary-400);*/
-    box-shadow: 0 0 0.2em 0.1em rgb(236, 232, 228);
+   /* box-shadow: 0 0 0.2em 0.1em rgb(236, 232, 228);*/
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     transform: scale(1);
     transition: transform 150ms ease-in, background 200ms ease-in;
     
@@ -67,10 +74,10 @@ body {
 .ax-list{
     width: 110px;
     height: auto;
-    background-color: rgb(44, 58, 71);
-    box-shadow:  0px 0px 0.30em 0.2em rgba(12, 128, 128, 0.5);
+    /*background-color: rgb(44, 58, 71);*/
+    /*box-shadow:  0px 0px 0.2em 0.1em rgba(204, 188, 46, 0.5);*/
     border: rgba(0,0,0,0.3);
-    border-radius:0.5rem;
+
 }
 
 .main-content{
@@ -95,4 +102,10 @@ body {
 .ax-high{
     color: var(--ax-high);
 }
+
+.mat-slide-toggle-content{
+    color: white;
+}
+
+
 

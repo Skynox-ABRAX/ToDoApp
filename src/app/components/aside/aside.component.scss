@@ -1,6 +1,7 @@
 :host{
-    background-color: rgb(44, 58, 71);
-    box-shadow:  0px 0px 0.30em 0.2em rgba(12, 128, 128, 0.5);
+    // background-color: rgb(44, 58, 71);
+    // box-shadow:  0px 0px 0.30em 0.2em rgba(12, 128, 128, 0.5);
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     border-radius: 0.5rem;
     min-width: 20%;
     max-width: 20rem;
@@ -9,9 +10,10 @@
     padding-bottom: 2rem;
 
 
+
     
     .ax-header{
-        background: linear-gradient(to top, rgb(128, 50, 97)0%, rgb(109, 33, 79)100%) ;
+        background: var(--ax-secondary-boxshadow); 
     }
 
     h2{
@@ -33,7 +35,7 @@
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%,0);
-        color: black;
+        color: white;
     }
     .ax-content-pomodoros{
         padding: 1rem;
@@ -41,8 +43,18 @@
     }
 
     .fa-plus:before{
-        color: white;
+        color: black;
     }
+    a{
+        transition: transform 200ms ease-in;
+    }
+    
+        a:hover{
+            transform: rotateZ(180deg);
+            transition: transform 200ms ease-in;
+        }
+    
+    
 
     
 

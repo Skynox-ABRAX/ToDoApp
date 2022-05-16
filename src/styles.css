@@ -2,6 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 h1 {
   font-size: 2rem;
+  color: #d7f3f3;
 }
 
 a {
@@ -26,11 +27,15 @@ body {
   --ax-progress: rgb(196, 229, 56);
   --ax-closed: rgb(237, 76, 103);
   --ax-canceled: rgb(247, 183, 49);
+  --ax-background: rgba(230, 224, 224, 0.05);
   --ax-low: rgb(253, 167, 223);
   --ax-normal:rgb(32, 191, 107);
   --ax-high:rgb(234, 32, 39);
-  --ax-primary-400: rgb(184, 41, 124);
+  --ax-primary-400: rgb(99, 110, 114);
+  /*--ax-primary-400: rgb(184, 41, 124);*/
   --ax-rgb-primary: 201,23,127;
+  --ax-secondary-boxshadow: linear-gradient(to top right, rgb(181, 38, 95) 0%, rgb(150, 21, 73) 100%);
+  --ax-primary-boxshadow: linear-gradient(to top right, rgba(49, 38, 143, 0.83) 0%, rgba(28, 6, 63, 0.86) 80%);
 }
 
 .mt-0 {
@@ -443,8 +448,13 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: linear-gradient(to top right, #e2e7e0 0%, #bec5bd 100%);
   background-repeat: no-repeat;
+  background-color: var(--ax-background);
+}
+
+.img {
+  opacity: 0.6;
+  height: 40px;
 }
 
 .title {
@@ -454,27 +464,27 @@ body {
   text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
 
+nav {
+  background-image: url("/assets/background.png");
+}
+
 .navbar {
-  background: linear-gradient(to top, #803261 0%, #6d214f 100%);
+  background: url("/assets/background.png"), var(--ax-primary-boxshadow);
   /*box-shadow: 0 0 0.7em 0.3em rgb(240, 167, 65, 0.5);*/
   /*border-bottom: 2px solid rgb(240, 167, 65);*/
   height: 4rem;
   transition: background 200ms ease-in;
 }
 
-.navbar:hover {
-  background: linear-gradient(to top, #f3af50 0%, #ffb142 100%);
-  transition: background 200ms ease-in;
-}
-
 .ax-icon {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(to top, #803261 0%, #6d214f 100%);
+  background: var(--ax-secondary-boxshadow);
   color: black;
   position: relative;
   /*border: 3px solid var(--ax-primary-400);*/
-  box-shadow: 0 0 0.2em 0.1em #ece8e4;
+  /* box-shadow: 0 0 0.2em 0.1em rgb(236, 232, 228);*/
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   transform: scale(1);
   transition: transform 150ms ease-in, background 200ms ease-in;
 }
@@ -494,10 +504,9 @@ body {
 .ax-list {
   width: 110px;
   height: auto;
-  background-color: #2c3a47;
-  box-shadow: 0px 0px 0.3em 0.2em rgba(12, 128, 128, 0.5);
+  /*background-color: rgb(44, 58, 71);*/
+  /*box-shadow:  0px 0px 0.2em 0.1em rgba(204, 188, 46, 0.5);*/
   border: rgba(0, 0, 0, 0.3);
-  border-radius: 0.5rem;
 }
 
 .main-content {
@@ -517,4 +526,8 @@ body {
 
 .ax-high {
   color: var(--ax-high);
+}
+
+.mat-slide-toggle-content {
+  color: white;
 }

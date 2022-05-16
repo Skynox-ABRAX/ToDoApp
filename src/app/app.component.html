@@ -1,9 +1,12 @@
 <div class="container">
   <nav class="navbar mb-4 r-flex">
     <h1 class="title txt-left mt-0 pl-4 mb-0 flex-grow-1">ToDo App</h1>
-    <mat-slide-toggle class="mr-4" (change)="toggle($event)"
-      >Dark Theme</mat-slide-toggle
-    >
+    <span class="ax-current-time">{{
+      currentTime | date: "MMM d, y, HH:mm:ss"
+    }}</span>
+    <mat-slide-toggle class="mr-4" (change)="toggle($event)">{{
+      nameTheme
+    }}</mat-slide-toggle>
   </nav>
 </div>
 
@@ -11,18 +14,24 @@
   <div></div>
   <app-menu></app-menu>
   <app-content
+    [@showContent]
     *ngIf="isVisibleTodoPanel"
     [ngClass]="order ? 'ax-item' : ''"
   ></app-content>
-  <app-aside *ngIf="isVisiblePomodoroPanel" [ngClass]="order ? '' : 'ax-item'">
+  <app-aside
+    [@showAside]
+    *ngIf="isVisiblePomodoroPanel"
+    [ngClass]="order ? '' : 'ax-item'"
+  >
   </app-aside>
   <div class="ax-item-3"></div>
 </div>
 
-<app-overlay
-  class="ax-overlay"
-  (eventEmitter)="closeOverlay()"
-  *ngIf="isVisible"
-  [currentTodo]="currentTodo"
->
-</app-overlay>
+<div class="content-overlay" [@showEdit] *ngIf="isVisible">
+  <app-overlay
+    class="ax-overlay"
+    (eventEmitter)="closeOverlay()"
+    [currentTodo]="currentTodo"
+  >
+  </app-overlay>
+</div>

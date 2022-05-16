@@ -8,7 +8,8 @@ import { TodoService } from 'src/app/services/todo.service';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss']
+  styleUrls: ['./content.component.scss'],
+
 })
 export class ContentComponent implements OnInit {
 

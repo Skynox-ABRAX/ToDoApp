@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { showMenuAnimation, showTodoAnimation } from 'src/app/animations/animations';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
 import { todo } from 'src/app/models/todo';
@@ -9,7 +10,8 @@ import { status } from '../../enums/statusEnum';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
+  animations:[showMenuAnimation]
 })
 export class MenuComponent implements OnInit
 {

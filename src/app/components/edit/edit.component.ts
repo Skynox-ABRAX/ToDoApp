@@ -58,10 +58,11 @@ export class EditComponent implements OnInit {
   }
 
  
-  saveTodo()
+  saveTodo(e: Event)
   {
-    
+    e.preventDefault();
     this.todoService.emit(new eventEmit(events.addTodo, this.currentTodo));
+    this.eventEmitter.emit();
 
 
   }

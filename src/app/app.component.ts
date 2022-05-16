@@ -1,6 +1,7 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { showAsideAnimation, showContentAnimation, showEditAnimation } from './animations/animations';
 import { events } from './enums/eventsEnum';
 
 import { todo } from './models/todo';
@@ -12,7 +13,8 @@ import { TodoService } from './services/todo.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations:[showContentAnimation, showAsideAnimation, showEditAnimation]
 })
 export class AppComponent {
   title = 'ToDoApp';
@@ -24,6 +26,9 @@ export class AppComponent {
   isVisibleTodoPanel: boolean = true
   order: boolean = false;
   useDefault = false;
+  nameTheme: string = "light";
+  currentTime: number;
+  id2: any;
 
   @ViewChild('overlay') overlay: ElementRef;
 
@@ -52,6 +57,7 @@ export class AppComponent {
     this.todoService.on(events.showOrHideTodoPanel, ((td: todo) => { this.isVisibleTodoPanel =! this.isVisibleTodoPanel }));
     this.todoService.on(events.switchPanel, ((td: todo) => { this.order=! this.order }));
     this.setLightbulb();
+    this.id2 = setInterval(()=> this.currentTime= Date.now(), 1000)
   }
 
   closeOverlay()
@@ -73,8 +79,10 @@ export class AppComponent {
   toggleTheme() {
     if (this.themeService.isDarkTheme()) {
       this.themeService.setLightTheme();
+      this.nameTheme = "light";
     } else {
       this.themeService.setDarkTheme();
+      this.nameTheme = "dark";
     }
 
     this.setLightbulb();

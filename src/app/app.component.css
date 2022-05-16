@@ -1,14 +1,18 @@
-.ax-overlay {
+.content-overlay {
   position: fixed;
-  top: 10%;
-  left: 10%;
-  right: 10%;
-  bottom: 10%;
-  background-color: rgba(76, 216, 162, 0.2);
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(127, 144, 224, 0.4);
+  padding: 10rem;
+  overflow-y: scroll;
 }
 
 nav {
   align-items: center;
+  width: 100%;
 }
 
 .ax-item {
@@ -17,4 +21,14 @@ nav {
 
 .ax-item-3 {
   order: 3;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--ax-secondary-boxshadow);
+}
+
+.ax-current-time {
+  color: white;
+  font-size: 0.9rem;
+  margin-right: 3rem;
 }

@@ -1,6 +1,6 @@
 <menu class="pl-0 mt-0">
   <ul class="list-style-none ax-list pt-4 pb-4 pl-0 mt-0 txt-center">
-    <li>
+    <li [@showMenu]>
       <a [routerLink]="['/']"
         ><i
           class="fa-solid fa-house-chimney fa-3x ax-icon ax-br-circle mb-1"
@@ -8,27 +8,27 @@
       ></a>
     </li>
 
-    <li>
+    <li [@showMenu]>
       <a (click)="showOrHideTodoPanel()"
         ><i class="fa-solid fa-list-check fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
-    <li>
+    <li [@showMenu]>
       <a (click)="addTodo()"
         ><i class="fa-solid fa-plus fa-3x ax-icon ax-br-circle mb-1"> </i>
       </a>
     </li>
-    <li>
+    <li [@showMenu]>
       <a (click)="showOrHidePomodoroPanel()"
         ><i class="fa-solid fa-clock fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
-    <li>
+    <li [@showMenu]>
       <a (click)="switchPanel()"
         ><i class="fa-solid fa-repeat fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
-    <li>
+    <li [@showMenu]>
       <a href=""
         ><i class="fa-solid fa-envelope fa-3x ax-icon ax-br-circle"></i
       ></a>

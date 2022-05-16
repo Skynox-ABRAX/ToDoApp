@@ -1,5 +1,11 @@
 h1 {
   font-size: 2rem;
+  color: #d7f3f3;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 body {
@@ -13,10 +19,52 @@ body {
 }
 
 :root {
-  --ax-primary: rgb(201, 23, 127);
   --ax-accent: rgb(80,80,153);
-  --ax-primary-400: rgb(184, 41, 124);
+  --ax-primary:rgb(235, 59, 90);
+  --ax-started: rgb(56, 103, 214);
+  --ax-progress: rgb(196, 229, 56);
+  --ax-closed: rgb(237, 76, 103);
+  --ax-canceled: rgb(247, 183, 49);
+  --ax-background: rgb(240,240,240);
+  --ax-low: rgb(253, 167, 223);
+  --ax-normal:rgb(32, 191, 107);
+  --ax-high:rgb(234, 32, 39);
+  --ax-primary-400: rgb(99, 110, 114);
+  /*--ax-primary-400: rgb(184, 41, 124);*/
   --ax-rgb-primary: 201,23,127;
+  --ax-primary-boxshadow: linear-gradient(to top right, rgba(49, 38, 143, 0.83), rgba(71, 37, 126, 0.86) 100%);
+}
+
+.mt-0 {
+  margin-top: 0rem;
+}
+
+.pt-0 {
+  padding-top: 0rem;
+}
+
+.mr-0 {
+  margin-right: 0rem;
+}
+
+.pr-0 {
+  padding-right: 0rem;
+}
+
+.mb-0 {
+  margin-bottom: 0rem;
+}
+
+.pb-0 {
+  padding-bottom: 0rem;
+}
+
+.ml-0 {
+  margin-left: 0rem;
+}
+
+.pl-0 {
+  padding-left: 0rem;
 }
 
 .mt-1 {
@@ -356,10 +404,28 @@ body {
 *                           POSITION
 *
 ****************************************************************************/
+.r-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.c-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
 .container {
   width: 100;
 }
 
 .list-style-none {
   list-style-type: none;
+}
+
+.ax-br-circle {
+  border-radius: 50%;
 }

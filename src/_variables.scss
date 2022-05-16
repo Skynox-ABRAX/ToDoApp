@@ -9,11 +9,18 @@
     --ax-closed: rgb(237, 76, 103);
     --ax-canceled: rgb(247, 183, 49);
 
+    --ax-background: rgba(230, 224, 224, 0.05);
+
     --ax-low: rgb(253, 167, 223);
     --ax-normal :rgb(32, 191, 107);
     --ax-high :rgb(234, 32, 39);
 
-    --ax-primary-400: rgb(184, 41, 124);
+    --ax-primary-400: rgb(99, 110, 114);
+
+    /*--ax-primary-400: rgb(184, 41, 124);*/
     --ax-rgb-primary: 201,23,127;
+    --ax-secondary-boxshadow: linear-gradient(to top right, rgb(181, 38, 95) 0%, rgb(150, 21, 73) 100%);
+    // --ax-primary-boxshadow: linear-gradient(top right, rgb(99, 110, 114) 0%, rgb(148, 149, 150) 100%);
+    --ax-primary-boxshadow: linear-gradient(to top right, rgba(49, 38, 143, 0.83) 0%, rgba(28, 6, 63, 0.86) 80%);
 
 }
