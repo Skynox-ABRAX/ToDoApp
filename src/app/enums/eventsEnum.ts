@@ -7,5 +7,7 @@ export enum events
     'deletePomodoro',
     'showOrHidePanelPomodoro',
     'showOrHideTodoPanel',
-    'switchPanel'
+    'switchPanel',
+    'switchView',
+    'cancelEdit'
 }

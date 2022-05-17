@@ -2,21 +2,45 @@ import { animate, animation, keyframes, query, sequence, stagger, style, transit
 
 export const showTodoAnimation = [
   trigger('showTilesTodo', [
-        transition('* => *', [ // each time the binding value changes
-          query(':leave', [
-            stagger(100, [
-              animate('0.5s', style({ opacity: 0 }))
-            ])
-          ],{ optional: true }),
-          query(':enter', [
-            style({ opacity: 0 }),
-            stagger(100, [
-              animate('0.5s', style({ opacity: 1 }))
-            ])
-          ],{ optional: true })
+    transition('* => *', [ // each time the binding value changes
+      query(':leave', [
+        stagger(100, [
+          animate('0.5s', style({ opacity: 0 }))
         ])
-      ])
-]   
+      ], { optional: true }),
+      query(':enter', [
+        style({ opacity: 0 }),
+        stagger(100, [
+          animate('0.5s', style({ opacity: 1 }))
+        ])
+      ], { optional: true })
+    ])
+  ])
+];
+
+
+export const showListAnimation = [
+  trigger('showList', [
+    transition('* => *', [ // each time the binding value changes
+      query(':leave', [
+        stagger(100, [
+          animate('0.5s', style({ opacity: 0 }))
+        ])
+      ], { optional: true }),
+      query(':enter', [
+        style({ opacity: 0 }),
+        stagger(100, [
+          animate('0.5s', style({ opacity: 1 }))
+        ])
+      ], { optional: true })
+    ])
+  ])
+];  
+
+
+
+
+
     
 export const showMenuAnimation = [
   trigger('showMenu', [
@@ -38,6 +62,14 @@ export const showContentAnimation = [
         style({ transform: 'translateY(0%)', opacity: 1, offset: 1 })
       ]))
 
+    ]),
+    transition(':leave', [
+      // the provided offset values
+      animate("0.8s", keyframes([
+        style({ transform: 'translateY(0%)', opacity: 1, offset: 0 }),
+        style({ transform: 'translateY(60%)', opacity: 0, offset: 1 })
+      ]))
+
     ])
   ])
 ]; 
@@ -50,6 +82,14 @@ export const showAsideAnimation = [
         style({ transform: 'translateX(100%)', opacity: 0, offset: 0 }),
         style({ transform: 'translateX(0px)', opacity: 1, offset: 1 })
       ]))
+    ]),
+    transition(':leave', [
+      // the provided offset values
+      animate("0.4s", keyframes([
+        style({ transform: 'translateX(0%)', opacity: 1, offset: 0 }),
+        style({ transform: 'translateX(100%)', opacity: 0, offset: 1 })
+      ]))
+
     ])
   ])];
 

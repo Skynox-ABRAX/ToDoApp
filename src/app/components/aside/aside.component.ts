@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { showTodoAnimation } from 'src/app/animations/animations';
 import { events } from 'src/app/enums/eventsEnum';
+import { eventEmit } from 'src/app/models/eventEmit';
 import { pomodoro } from 'src/app/models/pomodoro';
 import { TodoService } from 'src/app/services/todo.service';
 
@@ -31,5 +32,10 @@ export class AsideComponent implements OnInit {
     this.pomodoros.reverse();
     console.log(this.pomodoros);
   }
+
+  closePanel()
+  {
+      this.todoService.emit(new eventEmit(events.showOrHidePanelPomodoro, {}));
+    }
 
 }

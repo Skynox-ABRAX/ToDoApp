@@ -11,6 +11,24 @@
 
     }
 
+    .ax-height{
+        height: auto;
+        transition: height 300ms ease-in;
+    }
+
+    .order1{
+        order: 1;
+    }
+
+
+    .order2{
+        order: 2;
+    }
+
+    mat-paginator{
+        order: 3;
+    }
+
 
     
     

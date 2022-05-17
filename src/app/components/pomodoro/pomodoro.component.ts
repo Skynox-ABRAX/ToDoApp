@@ -56,11 +56,12 @@ export class PomodoroComponent implements OnInit {
 
     if (!this.status) {
 
+      this.toastr.warning("The pomodoro is running!")
+
       this.id = setInterval(() =>
       {
         this.currentTime = this.timing2;
         this.timing2 = new Date((this.timing2.getTime() - 1000));
-        console.log(this.timing2);
         this.statusClock = 'ax-red';
         if (this.timing2.getTime() == this.counter - 10000) {
           clearInterval(this.id);
@@ -70,8 +71,6 @@ export class PomodoroComponent implements OnInit {
         }
       }, 1000);
 
-
-
       this.status = !this.status;
 
     } else {
@@ -79,6 +78,7 @@ export class PomodoroComponent implements OnInit {
       this.id ? clearInterval(this.id) : '';
       this.status = !this.status;
       this.statusClock = 'ax-green';
+      this.toastr.error("The pomodoro is paused!")
     }
 
 

@@ -1,28 +1,25 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
 import { todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
-  selector: 'app-todo',
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.scss']
+  selector: 'app-view-list-todo',
+  templateUrl: './view-list-todo.component.html',
+  styleUrls: ['./view-list-todo.component.scss']
 })
-export class TodoComponent implements OnInit {
+export class ViewListTodoComponent implements OnInit {
 
   @Input() todo: todo;
   _tempTodo: todo;
   song: boolean = false;
   id: any;
-  
+
   status: string = "ax-closed";
   priority: string = "ax-normal";
 
-
-
-  constructor(public todoService: TodoService) { }
-  
+  constructor(private todoService: TodoService) { }
 
   edit(todo2: todo)
   {
@@ -37,19 +34,6 @@ export class TodoComponent implements OnInit {
     this.status = "ax-" + this.todo.status.toLowerCase();
     this.priority = "ax-" + this.todo.priority.toLowerCase();
 
-    this.todoService.on(events.cancelEdit, ((td: todo) =>
-    {
-      this.todo.id = this._tempTodo.id;
-      this.todo.title = this._tempTodo.title;
-      this.todo.content = this._tempTodo.content;
-      this.todo.status = this._tempTodo.status;
-      this.todo.priority = this._tempTodo.priority;
-      this.todo.closing = this._tempTodo.closing;
-      this.todo.createdAt = this._tempTodo.createdAt;
-      this.todo.updatedAt = this._tempTodo.updatedAt;
-      this._tempTodo = null;
-    }));
-    
     this.id = setTimeout(() =>
     {
       setInterval(() =>
@@ -63,6 +47,18 @@ export class TodoComponent implements OnInit {
       )
     }, 5000);
 
+    this.todoService.on(events.cancelEdit, ((td: todo) =>
+    {
+      this.todo.id = this._tempTodo.id;
+      this.todo.title = this._tempTodo.title;
+      this.todo.content = this._tempTodo.content;
+      this.todo.status = this._tempTodo.status;
+      this.todo.priority = this._tempTodo.priority;
+      this.todo.closing = this._tempTodo.closing;
+      this.todo.createdAt = this._tempTodo.createdAt;
+      this.todo.updatedAt = this._tempTodo.updatedAt;
+      this._tempTodo = null;
+      }));
 
   }
 
@@ -83,6 +79,5 @@ export class TodoComponent implements OnInit {
   }
   
 
- 
 
 }

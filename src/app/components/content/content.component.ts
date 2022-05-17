@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '@angular/router';
 import { Subject } from 'rxjs';
+import { events } from 'src/app/enums/eventsEnum';
 import { category } from 'src/app/models/category';
+import { eventEmit } from 'src/app/models/eventEmit';
 import { todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
@@ -32,6 +34,17 @@ export class ContentComponent implements OnInit {
   getFilter(event: any)
   {
     this.eventParentSubject.next(event.target.innerText);
+  }
+
+
+  closePanel(){
+    this.todoService.emit(new eventEmit(events.showOrHideTodoPanel, todo));
+  }
+
+  showListTodo()
+  {
+    
+    this.todoService.emit(new eventEmit(events.switchView, todo));
   }
 
 }

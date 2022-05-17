@@ -51,11 +51,12 @@ export class AppComponent {
 
   ngOnInit()
   {
-    this.todoService.on(events.closeOverlay, ((td: todo) => { console.log(td); this.isVisible = true; this.currentTodo = td; }));
+    this.todoService.on(events.closeOverlay, ((td: todo) => { this.isVisible = true; this.currentTodo = td; }));
     this.todoService.on(events.addTodo, ((td: todo) => { this.isVisible = true; this.currentTodo = td }));
     this.todoService.on(events.showOrHidePanelPomodoro, ((td: todo) => { this.isVisiblePomodoroPanel =! this.isVisiblePomodoroPanel }));
     this.todoService.on(events.showOrHideTodoPanel, ((td: todo) => { this.isVisibleTodoPanel =! this.isVisibleTodoPanel }));
-    this.todoService.on(events.switchPanel, ((td: todo) => { this.order=! this.order }));
+    this.todoService.on(events.switchPanel, ((td: todo) => { this.order = !this.order }));
+
     this.setLightbulb();
     this.id2 = setInterval(()=> this.currentTime= Date.now(), 1000)
   }

@@ -61,9 +61,19 @@ export class EditComponent implements OnInit {
   saveTodo(e: Event)
   {
     e.preventDefault();
+    this.currentTodo.updatedAt = new Date(Date.now());
     this.todoService.emit(new eventEmit(events.addTodo, this.currentTodo));
     this.eventEmitter.emit();
 
+
+  }
+
+  cancelTodo(e: Event)
+  {
+    e.preventDefault();
+    this.todoService.emit(new eventEmit(events.cancelEdit, this.currentTodo));
+    this.todoService.emit(new eventEmit(events.closeOverlay, this.currentTodo));
+    this.eventEmitter.emit();
 
   }
 

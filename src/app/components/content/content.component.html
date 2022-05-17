@@ -2,10 +2,10 @@
   <section>
     <div class="section-header r-flex txt-left pl-2">
       <h2 class="mt-0 mb-0">Summary</h2>
-      <a href=""><i class="fa-solid fa-xmark fa-2x"></i></a>
+      <a (click)="closePanel()"><i class="fa-solid fa-xmark fa-2x"></i></a>
     </div>
-    <div class="section-body">
-      <ul class="list-style-none r-flex mt-2">
+    <div class="section-body r-flex">
+      <ul class="list-style-none r-flex mt-2 flex-grow-1">
         <li class="mr-2">
           <button
             mat-raised-button
@@ -55,6 +55,8 @@
           </button>
         </li>
       </ul>
+
+      <a class="ax-list-todo" (click)="showListTodo()"><i class="fa-solid fa-list fa-3x"></i></a>
     </div>
   </section>
 

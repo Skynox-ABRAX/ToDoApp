@@ -8,3 +8,16 @@
   gap: 2rem;
   padding: 2rem;
 }
+:host .ax-height {
+  height: auto;
+  transition: height 300ms ease-in;
+}
+:host .order1 {
+  order: 1;
+}
+:host .order2 {
+  order: 2;
+}
+:host mat-paginator {
+  order: 3;
+}

@@ -17,6 +17,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { FormBuilder } from '@angular/forms';
 import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
+import { ViewListTodoComponent } from './components/view-list-todo/view-list-todo.component';
 
 
 
@@ -31,7 +32,8 @@ import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
     DatePipePipe,
     OverlayComponent,
     EditComponent,
-    PomodoroComponent
+    PomodoroComponent,
+    ViewListTodoComponent
   ],
   imports: [
     BrowserModule,

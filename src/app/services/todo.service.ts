@@ -69,7 +69,7 @@ export class TodoService implements ITodoService {
 
     this._todos = [
 
-      new todo({ id: 1, title: "titre 1", content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptatum perferendis quam explicabo eos, facere odio est enim, pariatur ulla", status: status.started, priority: priority.normal, closing: new Date(), createdAt: new Date(), updatedAt: new Date() }),
+      new todo ({ id: 1, title: "titre 1", content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptatum perferendis quam explicabo eos, facere odio est enim, pariatur ulla", status: status.started, priority: priority.normal, closing: new Date(), createdAt: new Date(), updatedAt: new Date() }),
       new todo ({ id: 2, title: "titre 2", content: " Lorem ips. Porro voluptatum perferendis quam explicabo eos, facere odio est enim, pariatur ulla", status: status.closed, priority: priority.normal, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
       new todo ({ id: 3, title: "titre 3", content: "lorem 3", status: status.Canceled, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
       new todo ({ id: 4, title: "titre 4", content: " Lorem ipsum dolorriatur ulla", status: status.started, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),

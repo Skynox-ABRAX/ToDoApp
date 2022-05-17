@@ -2,7 +2,7 @@
   min-width: calc((100% - 2rem) / 2);
   max-width: calc((100% - 2rem) / 2);
   background: linear-gradient(to top right, #cad3c8 0%, #98a097 100%);
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.2rem;
   /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
   font-size: 1.2rem;
@@ -18,12 +18,17 @@
 :host .mat-card-actions {
   gap: 0;
   justify-content: flex-end;
+  padding-top: 0;
 }
 :host mat-card {
   height: 100%;
 }
 :host h2 {
   font-size: 1.1rem;
+  color: rgba(40, 40, 40, 0.8);
+}
+:host .ax-content {
+  color: #141414;
 }
 :host .todo {
   row-gap: 1rem;
@@ -47,10 +52,12 @@
   margin: 0;
 }
 :host .ax-date-info {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  text-shadow: 2px 2px 0.15em rgba(133, 125, 125, 0.05);
+  color: #a09d9d;
 }
 :host .ax-other-infos {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 :host .ax-other-infos section {
   margin-bottom: 0.5rem;
@@ -59,7 +66,7 @@
   padding-left: 0.5rem;
 }
 :host .ax-other-infos section i {
-  color: black;
+  color: #a09d9d;
 }
 :host .ax-other-infos section .ax-infos {
   font-size: 0.8rem;
@@ -75,4 +82,69 @@
 }
 :host .ax-started {
   background-color: var(--ax-started);
+}
+:host .ax-closing {
+  color: #a11b51;
+  font-size: 1rem;
+  align-self: center;
+  margin-top: 1rem;
+}
+:host .mat-card > :first-child {
+  margin-top: 1.5rem;
+}
+:host .song {
+  -webkit-animation: songKeyFrame 2000ms ease infinite;
+          animation: songKeyFrame 2000ms ease infinite;
+}
+@-webkit-keyframes songKeyFrame {
+  0% {
+    transform: rotateZ(-30deg);
+  }
+  15% {
+    transform: rotateZ(30deg);
+  }
+  30% {
+    transform: rotateZ(-30deg);
+  }
+  45% {
+    transform: rotateZ(20deg);
+  }
+  60% {
+    transform: rotateZ(-30deg);
+  }
+  75% {
+    transform: rotateZ(30deg);
+  }
+  76% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes songKeyFrame {
+  0% {
+    transform: rotateZ(-30deg);
+  }
+  15% {
+    transform: rotateZ(30deg);
+  }
+  30% {
+    transform: rotateZ(-30deg);
+  }
+  45% {
+    transform: rotateZ(20deg);
+  }
+  60% {
+    transform: rotateZ(-30deg);
+  }
+  75% {
+    transform: rotateZ(30deg);
+  }
+  76% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }

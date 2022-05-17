@@ -4,6 +4,7 @@
 }
 :host .ax-content-header {
   gap: 1rem;
+  color: rgba(40, 40, 40, 0.8);
 }
 :host .ax-trash {
   align-self: flex-end;

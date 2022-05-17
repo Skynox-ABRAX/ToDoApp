@@ -1,0 +1,29 @@
+<mat-card class="example-card r-flex">
+  <mat-card-title class="r-flex mt-2 mr-2 flex-grow-1">
+    <section class="ax-closing">
+      <i class="fa-solid fa-bell ax-infos" [ngClass]="song ? 'song' : ''"></i
+      ><span class="pl-1"
+        ><strong>{{ todo.closing | date: "MMM d, y, H:mm" }}</strong></span
+      >
+    </section>
+    <h2 class="flex-grow-1 mt-0 mb-0">Title : {{ todo.title }}</h2>
+    <div class="ax-status">
+      <button
+        mat-mini-fab
+        [ngClass]="status"
+        aria-label="Example icon button with a menu icon"
+      ></button>
+    </div>
+    <section>
+      <i class="fa-solid fa-tag" [ngClass]="priority"> </i>
+    </section>
+  </mat-card-title>
+  <mat-card-actions class="r-flex">
+    <button mat-button (click)="edit(todo)" class="">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+    <button mat-button (click)="delete(todo)" class="mr-1 ml-0 pl-0">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  </mat-card-actions>
+</mat-card>
