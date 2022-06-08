@@ -1,7 +1,12 @@
 <div class="content c-flex">
   <section>
     <div class="section-header r-flex txt-left pl-2">
-      <h2 class="mt-0 mb-0">Summary</h2>
+      <div class="title r-flex">
+        <h2 class="mt-0 mb-0">Summary</h2>
+        <a class="ax-list-todo" (click)="showListTodo()"
+          ><i class="fa-solid fa-list"></i
+        ></a>
+      </div>
       <a (click)="closePanel()"><i class="fa-solid fa-xmark fa-2x"></i></a>
     </div>
     <div class="section-body r-flex">
@@ -56,7 +61,11 @@
         </li>
       </ul>
 
-      <a class="ax-list-todo" (click)="showListTodo()"><i class="fa-solid fa-list fa-3x"></i></a>
+      <section class="ax-level c-flex ml-1 mr-2">
+        <span class="ax-level-detail ax-low">Low</span>
+        <span class="ax-level-detail ax-normal">Normal</span>
+        <span class="ax-level-detail ax-high">High</span>
+      </section>
     </div>
   </section>
 

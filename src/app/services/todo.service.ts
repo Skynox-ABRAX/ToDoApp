@@ -76,7 +76,14 @@ export class TodoService implements ITodoService {
       new todo ({ id: 5, title: "titre 5", content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro t enim, pariatur ulla", status: status.inProgress, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
       new todo ({ id: 6, title: "titre 6", content: "lorem 6", status: status.started, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
       new todo ({ id: 7, title: "titre 7", content: "lorem 7", status: status.inProgress, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
-      new todo ({ id: 8, title: "titre 8", content: "lorem 8", status: status.Canceled, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()})
+      new todo ({ id: 8, title: "titre 8", content: "lorem 8", status: status.Canceled, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
+      new todo ({ id: 9, title: "titre 3", content: "lorem 3", status: status.Canceled, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
+      new todo ({ id: 10, title: "titre 4", content: " Lorem ipsum dolorriatur ulla", status: status.started, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
+      new todo ({ id: 11, title: "titre 5", content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro t enim, pariatur ulla", status: status.inProgress, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
+      new todo ({ id: 12, title: "titre 6", content: "lorem 6", status: status.started, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
+      new todo ({ id: 13, title: "titre 7", content: "lorem 7", status: status.inProgress, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
+      new todo ({ id: 14, title: "titre 8", content: "lorem 8", status: status.Canceled, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()})
+
 
 
     ]

@@ -1,1 +1,15 @@
-<app-edit (eventEmitter)="closeOverlay()"   [currentTodo]="currentTodo"></app-edit>
+<div *ngIf="isEdit; then edit; else set"></div>
+
+<ng-template #edit>
+  <app-edit
+    (eventEmitter)="closeOverlay()"
+    [currentTodo]="currentTodo"
+  ></app-edit>
+</ng-template>
+
+<ng-template #set>
+  <app-settings
+    (eventEmitter)="closeOverlay()"
+    [setting]="currentSettings"
+  ></app-settings>
+</ng-template>

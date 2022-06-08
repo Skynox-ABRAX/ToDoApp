@@ -27,7 +27,17 @@ export class TodoComponent implements OnInit {
   edit(todo2: todo)
   {
     
-    this._tempTodo = new todo ({ id: this.todo.id, title: this.todo.title, content: this.todo.content, status: this.todo.status, priority: this.todo.priority, closing: this.todo.closing, updatedAt: this.todo.createdAt, createdAt: this.todo.updatedAt });
+    this._tempTodo = new todo({
+      id: this.todo.id,
+      title: this.todo.title,
+      content: this.todo.content,
+      status: this.todo.status,
+      priority: this.todo.priority,
+      closing: this.todo.closing,
+      updatedAt: this.todo.createdAt,
+      createdAt: this.todo.updatedAt
+    });
+    
     this.todoService.emit(new eventEmit(events.closeOverlay, todo2));
 
   }

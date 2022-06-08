@@ -12,13 +12,14 @@
 
 <div class="main-content r-flex">
   <div></div>
-  <app-menu></app-menu>
+  <app-menu [currentSettings]="currentSettings"></app-menu>
   <app-content
     [@showContent]
     *ngIf="isVisibleTodoPanel"
     [ngClass]="order ? 'ax-item' : ''"
   ></app-content>
   <app-aside
+    [currentSettings]="currentSettings"
     [@showAside]
     *ngIf="isVisiblePomodoroPanel"
     [ngClass]="order ? '' : 'ax-item'"
@@ -30,8 +31,10 @@
 <div class="content-overlay" [@showEdit] *ngIf="isVisible">
   <app-overlay
     class="ax-overlay"
+    [isEdit]="isEdit"
     (eventEmitter)="closeOverlay()"
     [currentTodo]="currentTodo"
+    [currentSettings]="currentSettings"
   >
   </app-overlay>
 </div>

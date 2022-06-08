@@ -18,6 +18,15 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 import { FormBuilder } from '@angular/forms';
 import { PomodoroComponent } from './components/pomodoro/pomodoro.component';
 import { ViewListTodoComponent } from './components/view-list-todo/view-list-todo.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { StoreRouterConnectingModule } from '@ngrx/router-store'; 
+import { todoReducer } from './store/reducers/todo.reducer';
+import { TodoReducers } from './store/reducers/index';
+
 
 
 
@@ -33,7 +42,8 @@ import { ViewListTodoComponent } from './components/view-list-todo/view-list-tod
     OverlayComponent,
     EditComponent,
     PomodoroComponent,
-    ViewListTodoComponent
+    ViewListTodoComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +51,10 @@ import { ViewListTodoComponent } from './components/view-list-todo/view-list-tod
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
-    ReactiveFormsModule
-
-
-
-
-  
-
+    ReactiveFormsModule,
+    StoreModule.forRoot(TodoReducers),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreRouterConnectingModule.forRoot({stateKey: 'TodoReducers'})
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

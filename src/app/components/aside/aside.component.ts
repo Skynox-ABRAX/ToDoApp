@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { showTodoAnimation } from 'src/app/animations/animations';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
 import { pomodoro } from 'src/app/models/pomodoro';
+import { settings } from 'src/app/models/settings';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
@@ -13,14 +14,15 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class AsideComponent implements OnInit {
 
-  pomodoros: pomodoro[]=[];
+  pomodoros: pomodoro[] = [];
+  @Input() currentSettings: settings;
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void
   {
     this.todoService.on(events.deletePomodoro, ((pm: pomodoro) => { this.pomodoros = this.pomodoros.filter(obj => { return obj !== pm })  }));
-
+    this.todoService.on(events.updateSettings, ((set: settings) => { this.currentSettings = set }));
   }
 
   addPomodoro()
@@ -30,12 +32,11 @@ export class AsideComponent implements OnInit {
     pom._timeRemaining = pom.setTimeRemaining();
     this.pomodoros.push(pom)
     this.pomodoros.reverse();
-    console.log(this.pomodoros);
   }
 
   closePanel()
   {
       this.todoService.emit(new eventEmit(events.showOrHidePanelPomodoro, {}));
-    }
+  }
 
 }

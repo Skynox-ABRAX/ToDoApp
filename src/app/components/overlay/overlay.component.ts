@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { events } from 'src/app/enums/eventsEnum';
+import { settings } from 'src/app/models/settings';
 import { todo } from 'src/app/models/todo';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-overlay',
@@ -9,21 +12,30 @@ import { todo } from 'src/app/models/todo';
 export class OverlayComponent implements OnInit
 {
   @Input() currentTodo: todo;
+  @Input() isEdit: boolean = true;
+
   @Output() eventEmitter: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  @Input() currentSettings: settings;
+
+
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void
   {
-    
-    console.log(this.currentTodo);
+    // this.todoService.on(events.addTodo, (() => this.isEdit = true));
+    // this.todoService.on(events.updateSettings, ((st:settings) => this.settings=st));
+
+
   }
 
   closeOverlay()
   {
     this.eventEmitter.emit();
-     // this.attendees = [...this.attendees, attendee];
-    }
+  }
+
+  
   }
 
 

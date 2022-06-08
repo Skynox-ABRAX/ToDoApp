@@ -13,7 +13,8 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['./content.component.scss'],
 
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit
+{
 
   eventParentSubject: Subject<string> = new Subject<string>();
   cat: category;
@@ -26,9 +27,10 @@ export class ContentComponent implements OnInit {
 
   ngOnInit(): void
   {
+
     this.cat = new category(this.todoService.getNumberItemsByCategory());
+    /*this.todoService.on(events.addTodo, ((td: todo) => { this.cat = new category(this.todoService.getNumberItemsByCategory()) }));*/
     this.cat2 = this.cat.started;
-  
   }
 
   getFilter(event: any)
@@ -37,14 +39,17 @@ export class ContentComponent implements OnInit {
   }
 
 
-  closePanel(){
+  closePanel()
+  {
     this.todoService.emit(new eventEmit(events.showOrHideTodoPanel, todo));
   }
 
   showListTodo()
   {
-    
+
     this.todoService.emit(new eventEmit(events.switchView, todo));
   }
+
+
 
 }

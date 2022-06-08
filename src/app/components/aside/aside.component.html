@@ -9,5 +9,5 @@
   class="c-flex ax-content-pomodoros mt-1"
   [@showTilesTodo]="pomodoros.length"
 >
-  <app-pomodoro *ngFor="let pom of pomodoros" [pomodoro]="pom"></app-pomodoro>
+  <app-pomodoro *ngFor="let pom of pomodoros" [pomodoro]="pom" [setting]="currentSettings"></app-pomodoro>
 </section>

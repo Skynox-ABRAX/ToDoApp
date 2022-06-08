@@ -29,6 +29,7 @@
 }
 :host .ax-content {
   color: #141414;
+  line-height: 1.4rem;
 }
 :host .todo {
   row-gap: 1rem;

@@ -9,5 +9,6 @@ export enum events
     'showOrHideTodoPanel',
     'switchPanel',
     'switchView',
-    'cancelEdit'
+    'cancelEdit',
+    'updateSettings'
 }

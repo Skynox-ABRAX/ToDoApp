@@ -15,3 +15,6 @@
 :host .ax-red {
   color: #c0392b;
 }
+:host .ax-status-title {
+  font-size: 0.7rem;
+}

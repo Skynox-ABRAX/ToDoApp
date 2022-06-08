@@ -5,6 +5,7 @@ import { map, Observable, timer, take } from 'rxjs';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
 import { pomodoro } from 'src/app/models/pomodoro';
+import { settings } from 'src/app/models/settings';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
@@ -17,6 +18,8 @@ import { TodoService } from 'src/app/services/todo.service';
 export class PomodoroComponent implements OnInit {
 
   @Input() pomodoro: pomodoro;
+  @Input() setting: settings;
+
   timeRemaining: Date;
   test2: string;
   timing: Date;
@@ -26,6 +29,8 @@ export class PomodoroComponent implements OnInit {
   dateStart: Date;
   status: boolean = false;
   statusClock = 'ax-green';
+  statusTitle: string = '';
+
 
 
   /*timers$: Observable<number>;*/
@@ -46,7 +51,7 @@ export class PomodoroComponent implements OnInit {
 
   ngOnInit(): void
   {
-    this.timing2 = new Date(1970, 1, 1, 0, 0, 10, 0);
+    this.timing2 = new Date(1970, 1, 1, this.setting.hour, this.setting.minute, this.setting.second);
     this.counter = this.timing2.getTime();
 
   }
@@ -56,18 +61,23 @@ export class PomodoroComponent implements OnInit {
 
     if (!this.status) {
 
-      this.toastr.warning("The pomodoro is running!")
+      this.toastr.warning("The pomodoro is running!");
+
+      this.statusTitle = " - running";
+    
 
       this.id = setInterval(() =>
       {
         this.currentTime = this.timing2;
         this.timing2 = new Date((this.timing2.getTime() - 1000));
         this.statusClock = 'ax-red';
-        if (this.timing2.getTime() == this.counter - 10000) {
+
+        if (this.timing2.getTime() == this.counter - (this.setting.hour*60*60*1000 + this.setting.minute*60*1000 + this.setting.second*1000)) {
           clearInterval(this.id);
           this.toastr.success("The pomodoro is done!");
+          this.statusTitle = " - done";
           this.statusClock = 'ax-green';
-
+          this.playAudio();
         }
       }, 1000);
 
@@ -79,17 +89,25 @@ export class PomodoroComponent implements OnInit {
       this.status = !this.status;
       this.statusClock = 'ax-green';
       this.toastr.error("The pomodoro is paused!")
+      this.statusTitle = " - paused";
     }
 
 
      
   }
 
+  playAudio(){
+    let audio = new Audio();
+    /*audio.src = "../../../assets/audio/alarm.wav";*/
+    audio.load();
+    audio.play();
+  }
+
+
   setTime()
   {
 
     this.test = new pomodoro(0,new Date(),new Date(), new Date());
-    console.log(this.test._timeRemaining);
 
    /* this.changeDetector.detectChanges();*/
   }
@@ -97,7 +115,7 @@ export class PomodoroComponent implements OnInit {
 
   reset()
   {
-    this.timing2 = new Date(1970, 1, 1, 0, 25, 0, 0);
+    this.timing2 = new Date(1970, 1, 1, this.setting.hour, this.setting.minute, this.setting.second);
     this.counter = this.timing2.getTime();
     this.statusClock = 'ax-green';
   }

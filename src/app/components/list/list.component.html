@@ -1,32 +1,11 @@
 <ng-container>
   <div class="c-flex">
-    <div
-      [@showList]
-      [@showTilesTodo]="todos.length"
-      *ngIf="viewStyle"
-      class="r-flex ax-content-list flex-grow-1"
-      [ngClass]="orderAttribute ? 'order1' : 'order2'"
-    >
-      <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
-    </div>
-
-    <div
-      [@showList]
-      [@showTilesTodo]="todos.length"
-      *ngIf="!viewStyle"
-      [ngClass]="orderAttribute ? 'order1' : 'order2'"
-      class="c-flex ax-content-list flex-grow-1"
-    >
-      <app-view-list-todo
-        *ngFor="let todo of todos"
-        [todo]="todo"
-      ></app-view-list-todo>
-    </div>
-
+    <ng-template *ngIf="isDetail; then detail; else list"></ng-template>
     <mat-paginator
       (page)="onChangePage($event)"
       [length]="todos2.length"
       [pageSize]="5"
+      [pageIndex]="currentIndex"
       [pageSizeOptions]="[5, 10, 25, 100]"
       class="mt-4"
       aria-label="Select page"
@@ -34,3 +13,24 @@
     </mat-paginator>
   </div>
 </ng-container>
+
+<ng-template #detail>
+  <div
+    [@showTilesTodo]="todos.length"
+    class="r-flex ax-content-list flex-grow-1"
+  >
+    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  </div>
+</ng-template>
+
+<ng-template #list>
+  <div
+    [@showTilesTodo]="todos.length"
+    class="c-flex ax-content-list flex-grow-1"
+  >
+    <app-view-list-todo
+      *ngFor="let todo of todos"
+      [todo]="todo"
+    ></app-view-list-todo>
+  </div>
+</ng-template>

@@ -1,0 +1,60 @@
+<form class="example-form ax-edit c-flex">
+  <a (click)="closeOverlay()"><i class="fa-solid fa-circle-xmark fa-3x"></i></a>
+  <section class="r-flex">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Hour</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="1,2,3..."
+        name="hour"
+        value="setting.hour"
+        [(ngModel)]="setting.hour"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width ml-2" appearance="fill">
+      <mat-label>Minute</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="1,2,3..."
+        name="minute"
+        value="setting.minute"
+        [(ngModel)]="setting.minute"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width ml-2" appearance="fill">
+      <mat-label>Second</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="1,2,3..."
+        name="second"
+        value="setting.second"
+        [(ngModel)]="setting.second"
+      />
+    </mat-form-field>
+  </section>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a default theme</mat-label>
+    <mat-select [(ngModel)]="setting.theme" name="theme">
+      <mat-option *ngFor="let theme of themes" [value]="theme">
+        {{ theme }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a default view</mat-label>
+    <mat-select [(ngModel)]="setting.view" name="view">
+      <mat-option *ngFor="let view of views" [value]="view">
+        {{ view }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-button (click)="cancelSettings($event)">Cancel</button>
+    <button mat-button color="primary" (click)="saveSettings($event)">
+      Save
+    </button>
+  </div>
+</form>

@@ -1,5 +1,8 @@
 <section class="ax-content-header r-flex">
-  <h3 class="flex-grow-1 mt-0 mb-0">Pomodoro {{ pomodoro._id }}</h3>
+  <h3 class="flex-grow-1 mt-0 mb-0">
+    Pomodoro {{ pomodoro._id }}
+    <span class="ax-status-title">{{ statusTitle }}</span>
+  </h3>
   <a (click)="startOrStop()"
     ><i class="fa-solid fa-clock" [ngClass]="statusClock"></i
   ></a>

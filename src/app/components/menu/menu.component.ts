@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { showMenuAnimation, showTodoAnimation } from 'src/app/animations/animations';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
+import { settings } from 'src/app/models/settings';
 import { todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 import { priority } from '../../enums/priorityEnum';
@@ -16,6 +17,7 @@ import { status } from '../../enums/statusEnum';
 export class MenuComponent implements OnInit
 {
   
+  @Input() currentSettings: settings;
 
   constructor(private todoService: TodoService) { }
 
@@ -44,6 +46,13 @@ export class MenuComponent implements OnInit
   switchPanel()
   {
     this.todoService.emit(new eventEmit(events.switchPanel, todo));
+  }
+
+  editSettings(e: Event)
+  {
+    e.preventDefault();
+    this.todoService.emit(new eventEmit(events.updateSettings, this.currentSettings));
+
   }
 
 
