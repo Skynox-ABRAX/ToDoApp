@@ -1,6 +1,6 @@
 <div class="content c-flex">
   <section>
-    <div class="section-header r-flex txt-left pl-2">
+    <div class="section-header r-flex txt-left pl-1 pr-2">
       <div class="title r-flex">
         <h2 class="mt-0 mb-0">Summary</h2>
         <a class="ax-list-todo" (click)="showListTodo()"
@@ -9,64 +9,112 @@
       </div>
       <a (click)="closePanel()"><i class="fa-solid fa-xmark fa-2x"></i></a>
     </div>
-    <div class="section-body r-flex">
-      <ul class="list-style-none r-flex mt-2 flex-grow-1">
-        <li class="mr-2">
-          <button
-            mat-raised-button
-            color="primary"
-            [matBadge]="cat.started"
-            matBadgePosition="before"
-            matBadgeColor="accent"
-            (click)="getFilter($event)"
-          >
-            Started
-          </button>
-        </li>
-        <li class="mr-2">
-          <button
-            class="ax-inprogress"
-            mat-raised-button
-            [matBadge]="cat.inProgres"
-            matBadgePosition="before"
-            matBadgeColor="accent"
-            (click)="getFilter($event)"
-          >
-            InProgress
-          </button>
-        </li>
-        <li class="mr-2">
-          <button
-            mat-raised-button
-            class="ax-closed"
-            [matBadge]="cat.closed"
-            matBadgePosition="before"
-            matBadgeColor="accent"
-            (click)="getFilter($event)"
-          >
-            Closed
-          </button>
-        </li>
-        <li>
-          <button
-            mat-raised-button
-            class="ax-canceled"
-            [matBadge]="cat.canceled"
-            matBadgePosition="before"
-            matBadgeColor="accent"
-            (click)="getFilter($event)"
-          >
-            Canceled
-          </button>
-        </li>
-      </ul>
 
-      <section class="ax-level c-flex ml-1 mr-2">
-        <span class="ax-level-detail ax-low">Low</span>
-        <span class="ax-level-detail ax-normal">Normal</span>
-        <span class="ax-level-detail ax-high">High</span>
-      </section>
-    </div>
+    <mat-accordion class="mt-1">
+<!-- 
+      <mat-expansion-panel hideToggle>
+            <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel> -->
+
+      <mat-expansion-panel (closed)="panelOpenState = false"
+                           (opened)="panelOpenState = true">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="pl-1">
+                Filter
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+        <div class="section-body c-flex">
+          <ul class="list-style-none c-flex mt-0">
+            <li class="mb-1">
+              <button
+                mat-raised-button
+                color="primary"
+                [matBadge]="cat.started"
+                matBadgePosition="before"
+                matBadgeColor="accent"
+                (click)="getFilter($event)"
+              >
+                Started
+              </button>
+            </li>
+            <li class="mb-1">
+              <button
+                class="ax-inprogress"
+                mat-raised-button
+                [matBadge]="cat.inProgres"
+                matBadgePosition="before"
+                matBadgeColor="accent"
+                (click)="getFilter($event)"
+              >
+                InProgress
+              </button>
+            </li>
+            <li class="mb-1">
+              <button
+                mat-raised-button
+                class="ax-closed"
+                [matBadge]="cat.closed"
+                matBadgePosition="before"
+                matBadgeColor="accent"
+                (click)="getFilter($event)"
+              >
+                Closed
+              </button>
+            </li>
+            <li>
+              <button
+                mat-raised-button
+                class="ax-canceled"
+                [matBadge]="cat.canceled"
+                matBadgePosition="before"
+                matBadgeColor="accent"
+                (click)="getFilter($event)"
+              >
+                Canceled
+              </button>
+            </li>
+          </ul>
+    
+          <section class="ax-level c-flex ml-2 mr-2">
+            <button
+                mat-raised-button
+                class="ax-level-detail ax-low"
+                [matBadge]="prt.low"
+                matBadgePosition="after"
+                matBadgeColor="accent"
+                (click)="getFilterPriority($event)"
+              >
+                Low
+              </button>
+              <button
+                mat-raised-button
+                class="ax-level-detail ax-normal"
+                [matBadge]="prt.normal"
+                matBadgePosition="after"
+                matBadgeColor="accent"
+                (click)="getFilterPriority($event)"
+              >
+                Normal
+              </button>
+              <button
+                mat-raised-button
+                class="ax-level-detail ax-high"
+                [matBadge]="prt.high"
+                matBadgePosition="after"
+                matBadgeColor="accent"
+                (click)="getFilterPriority($event)"
+              >
+                High
+              </button>
+        
+        </section>
+      </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    
+
   </section>
 
   <app-list

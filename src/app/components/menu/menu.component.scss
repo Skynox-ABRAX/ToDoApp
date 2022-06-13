@@ -1,0 +1,39 @@
+
+:host-context(.hamburger){
+
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    z-index: 3000;
+
+    & ul{
+        width: 100vw;
+        padding-top: 0;
+    }
+
+    & li{
+        text-align: center;
+        // padding-left : 3rem;
+        background: var(--ax-primary-boxshadow);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        & i{
+            margin-bottom: 0;
+        }
+
+    }
+
+}
+
+
+@media (min-width: 70rem){
+
+    :host-context(.hamburger){
+        display: none;
+    }
+
+
+}
+
+

@@ -24,3 +24,17 @@ a{
     width: 50%;
 }
 
+
+@media (min-width: 40rem){
+
+    .ax-time{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .ax-time > *{
+        max-width: 30%;
+    }
+
+}
+

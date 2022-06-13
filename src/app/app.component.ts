@@ -1,8 +1,10 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { AfterViewInit, Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store } from '@ngrx/store';
 import { showAsideAnimation, showContentAnimation, showEditAnimation } from './animations/animations';
+import { MenuComponent } from './components/menu/menu.component';
 import { events } from './enums/eventsEnum';
 import { settings } from './models/settings';
 
@@ -19,7 +21,7 @@ import { AddTodo } from './store/actions/todo.action';
   styleUrls: ['./app.component.scss'],
   animations:[showContentAnimation, showAsideAnimation, showEditAnimation]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'ToDoApp';
   campaignOne: FormGroup;
   campaignTwo: FormGroup;
@@ -27,6 +29,7 @@ export class AppComponent {
   currentTodo: todo;
   isVisiblePomodoroPanel: boolean = true;
   isVisibleTodoPanel: boolean = true
+  isMenuVisible: boolean = false;
   isEdit: boolean = true;
   order: boolean = false;
   useDefault = false;
@@ -36,9 +39,10 @@ export class AppComponent {
   id2: any;
 
   @ViewChild('overlay') overlay: ElementRef;
+  @ViewChild('hello', {read: ElementRef}) test : ElementRef; 
 
 
-  constructor(elem: ElementRef, renderer: Renderer2, private todoService: TodoService,    private themeService: ThemeService, private store: Store) {
+  constructor(elem: ElementRef, renderer: Renderer2, private todoService: TodoService,     private themeService: ThemeService, private store: Store, public breakpointObserver: BreakpointObserver) {
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
@@ -54,17 +58,33 @@ export class AppComponent {
     });
   }
 
+
+  ngAfterViewInit(): void {
+    //console.log("menucomponent:", this.test);
+  }
+
+
   ngOnInit()
   {
 
+    this.breakpointObserver
+      .observe(['(min-width: 70rem)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          if(this.isMenuVisible=true){
+            this.isMenuVisible=false;
+          }
+        } 
+      });
 
 
-    this.todoService.on(events.closeOverlay, ((td: todo) => { this.isVisible = true; this.currentTodo = td; this.isEdit = true; }));
-    this.todoService.on(events.addTodo, ((td: todo) => { this.isVisible = true; this.currentTodo = td; this.isEdit = true; }));
-    this.todoService.on(events.showOrHidePanelPomodoro, ((td: todo) => { this.isVisiblePomodoroPanel = !this.isVisiblePomodoroPanel }));
-    this.todoService.on(events.showOrHideTodoPanel, ((td: todo) => { this.isVisibleTodoPanel =! this.isVisibleTodoPanel }));
-    this.todoService.on(events.switchPanel, ((td: todo) => { this.order = !this.order }));
-    this.todoService.on(events.updateSettings, ((st:settings) => { this.isVisible = true; this.isEdit = false; this.currentSettings=st}));
+
+    this.todoService.on(events.closeOverlay, ((td: todo) => { this.isVisible = true; this.currentTodo = td; this.isEdit = true; this.showOrHideMenu();}));
+    this.todoService.on(events.addTodo, ((td: todo) => { this.isVisible = true; this.currentTodo = td; this.isEdit = true; this.showOrHideMenu();}));
+    this.todoService.on(events.showOrHidePanelPomodoro, ((td: todo) => { this.isVisiblePomodoroPanel = !this.isVisiblePomodoroPanel; this.showOrHideMenu(); }));
+    this.todoService.on(events.showOrHideTodoPanel, ((td: todo) => { this.isVisibleTodoPanel =! this.isVisibleTodoPanel; this.showOrHideMenu(); }));
+    this.todoService.on(events.switchPanel, ((td: todo) => { this.order = !this.order; this.showOrHideMenu();}));
+    this.todoService.on(events.updateSettings, ((st:settings) => { this.isVisible = true; this.isEdit = false; this.currentSettings=st; this.showOrHideMenu();}));
 
     this.setLightbulb();
     this.id2 = setInterval(()=> this.currentTime= Date.now(), 1000)
@@ -73,6 +93,7 @@ export class AppComponent {
   closeOverlay()
   {
     this.isVisible = false;
+    this.showOrHideMenu();
   }
 
   setLightbulb() {
@@ -95,6 +116,15 @@ export class AppComponent {
     }
 
     this.setLightbulb();
+  }
+
+  showOrHideMenu(){
+
+
+    this.isMenuVisible=!this.isMenuVisible;
+
+   //this.test.nativeElement.classList.toggle("visible");
+
   }
 
 

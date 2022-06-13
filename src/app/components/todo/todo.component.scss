@@ -1,11 +1,11 @@
 :host{
-    min-width: calc((100% - 2rem) / 2);
-    max-width: calc((100% - 2rem) / 2);
+    // min-width: calc((100% - 2rem) / 2);
+    // max-width: calc((100% - 2rem) / 2);
     background: linear-gradient(to top right, rgb(202, 211, 200)0%,rgb(152, 160, 151)100%);
     padding: 0.5rem;
     border-radius: 0.2rem;
     /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
-
+    width: 100%;
     font-size: 1.2rem;
 
     .mat-card-title, .mat-card-actions, mat-card{
@@ -66,12 +66,23 @@
         min-width: 3rem;
         margin: 0;
     }
+
+    .ax-created{
+        padding-left: 0.5rem;
+    }
      
         
     .ax-date-info{
         font-size: 0.7rem;
         text-shadow: 2px 2px 0.15em rgba(133, 125, 125, 0.05);
         color: rgb(160, 157, 157);
+
+
+    }
+
+    .ax-update{
+        padding-left: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .ax-other-infos{
@@ -82,11 +93,7 @@
         margin-bottom: 0.5rem;
 
 
-        span{
-            padding-left: 0.5rem;
-        }
-
-        i{
+       i, .ax-detail-infos-date, .ax-update{
             color: rgb(160, 157, 157);
         }
 
@@ -96,7 +103,14 @@
         }
     }
 
-    
+
+    .ax-detail-infos-date{
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
+
+    }
+
 
     .ax-inprogress{
         background-color: var(--ax-progress);
@@ -170,6 +184,26 @@
 
 }
 
-    
-
+  
 }
+
+
+@media (min-width: 70rem){
+
+    :host{
+        width: 45%;
+    }
+}
+
+@media (min-width: 90rem){
+
+    :host{
+        width: 30%;
+    }
+}
+
+
+
+
+
+

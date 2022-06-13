@@ -1,12 +1,13 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { filter, map, Subject, Subscription } from 'rxjs';
 import { events } from '../enums/eventsEnum';
-import { priority } from '../enums/priorityEnum';
 import { status } from '../enums/statusEnum';
 import { ITodoService } from '../interface/ITodoService';
 import { category } from '../models/category';
+import { level } from '../models/level';
 import { eventEmit } from '../models/eventEmit';
 import { todo } from '../models/todo';
+import { priority } from '../enums/priorityEnum';
 
 
 @Injectable({
@@ -41,6 +42,12 @@ export class TodoService implements ITodoService {
     return this._todos.filter(x => x.status === state);
   }
 
+  getTodoByPriority(state: string): todo[]
+  {
+    return this._todos.filter(x => x.priority === state);
+  }
+
+
   getNumberItemsByCategory()
   {
     this.getAllTodo();
@@ -55,6 +62,24 @@ export class TodoService implements ITodoService {
 
 
   }
+
+  getNumberItemsByPriority()
+  {
+    this.getAllTodo();
+    var prt = new level({
+      low: this._todos.filter(x => x.priority === priority.low).length,
+      normal: this._todos.filter(x => x.priority === priority.normal).length,
+      high: this._todos.filter(x => x.priority === priority.high).length
+
+  });
+
+    return prt;
+
+
+  }
+
+
+
 
   checkIfTodoExists(todo: todo, todos: todo[]):boolean
   {

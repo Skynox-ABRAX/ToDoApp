@@ -1,14 +1,18 @@
+:host{
+    display: block;
+}
+
 .content-overlay{
     position: fixed;
     box-sizing: border-box;
-
-    top: 0;
+     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(72, 79, 110, 0.6);
-    padding: 10rem;
+    padding: 0.5rem;
     overflow-y: scroll;
+    z-index: 10;
 }
 
 
@@ -35,5 +39,117 @@ nav{
 .ax-current-time{
     color: white;
     font-size: 0.9rem;
-    margin-right: 3rem;
+    display: none;
+
 }
+
+mat-slide-toggle{
+    display: none;
+}
+
+.fa-bars{
+    color: white;
+    
+}
+
+i{
+    cursor: pointer;
+}
+
+#menu{
+    display : none;
+}
+
+@media (width : 1000px){
+
+    .fa-bars{
+        display: none;
+    }
+
+    #hello{
+        display: none;
+    }
+    #menu{
+        display: block;
+    }
+}
+
+.hamburger{
+    position: relative;
+}
+
+.visible{
+    display: block;
+}
+
+.no-visible{
+    display: none;
+}
+
+
+
+
+@media (min-width : 25rem){
+
+    .ax-current-time{
+        display: block;
+        margin-right: 1rem;
+    }
+
+    mat-slide-toggle{
+        display: block;
+        margin-right: 1rem;
+    }
+
+
+
+}
+
+
+
+@media (min-width : 36rem){
+
+    .main-content{
+        flex-direction: row;
+    }
+
+}
+
+@media (min-width: 50rem){
+
+    .content-overlay{
+        padding: 3rem;
+
+    }
+}
+
+
+@media (max-width : 70rem){
+
+    .ax-item-fraction{
+       display: none;
+    }
+
+}
+
+
+@media (min-width: 70rem){
+
+    #menu{
+        display: block;
+    }
+
+    .fa-bars{
+        display: none;
+    }
+
+    
+}
+
+
+
+
+
+
+
+

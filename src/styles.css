@@ -14,6 +14,7 @@ body {
   font-size: 0.625em;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 * {
@@ -422,7 +423,7 @@ body {
 }
 
 .container {
-  width: 100;
+  width: 100%;
 }
 
 .list-style-none {
@@ -459,9 +460,10 @@ body {
 
 .title {
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   line-height: 4rem;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
 }
 
 nav {
@@ -511,9 +513,12 @@ nav {
 
 .main-content {
   height: 100%;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
   justify-content: space-around;
+  row-gap: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .ax-low {
@@ -530,4 +535,10 @@ nav {
 
 .mat-slide-toggle-content {
   color: white;
+}
+
+@media (min-width: 50rem) {
+  .title {
+    font-size: 1.8rem;
+  }
 }

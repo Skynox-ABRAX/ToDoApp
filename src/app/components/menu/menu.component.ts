@@ -22,6 +22,9 @@ export class MenuComponent implements OnInit
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+
+    
+
   }
 
   /**
@@ -54,6 +57,8 @@ export class MenuComponent implements OnInit
     this.todoService.emit(new eventEmit(events.updateSettings, this.currentSettings));
 
   }
+
+  
 
 
 }

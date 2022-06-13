@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { events } from 'src/app/enums/eventsEnum';
 import { category } from 'src/app/models/category';
 import { eventEmit } from 'src/app/models/eventEmit';
+import { level } from 'src/app/models/level';
 import { todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
@@ -18,7 +19,9 @@ export class ContentComponent implements OnInit
 
   eventParentSubject: Subject<string> = new Subject<string>();
   cat: category;
-  cat2: number
+  cat2: number;
+  panelOpenState = false;
+  prt: level;
 
 
 
@@ -29,6 +32,8 @@ export class ContentComponent implements OnInit
   {
 
     this.cat = new category(this.todoService.getNumberItemsByCategory());
+    this.prt = new level(this.todoService.getNumberItemsByPriority());
+
     /*this.todoService.on(events.addTodo, ((td: todo) => { this.cat = new category(this.todoService.getNumberItemsByCategory()) }));*/
     this.cat2 = this.cat.started;
   }
@@ -37,6 +42,13 @@ export class ContentComponent implements OnInit
   {
     this.eventParentSubject.next(event.target.innerText);
   }
+
+  getFilterPriority(event: any)
+  {
+    this.eventParentSubject.next(event.target.innerText);
+  }
+
+
 
 
   closePanel()

@@ -37,6 +37,7 @@ import { settings } from 'src/app/models/settings';
 export class ListComponent implements OnInit
 {
   private eventsSubscription: Subscription;
+  private eventsSubscription2: Subscription;
 
   @Input() events: Observable<string>;
 
@@ -52,8 +53,6 @@ export class ListComponent implements OnInit
   @ViewChild('.mat-paginator-range-label') matLabelPaginator: any;
   
 
-
-
   constructor(private todoService: TodoService, private renderer: Renderer2)
   {
   
@@ -67,6 +66,9 @@ export class ListComponent implements OnInit
     this.todos = this.todos2.slice(0, 5);
     
     this.eventsSubscription = this.events.subscribe(event => this.todos=this.todoService.getTodoByStatus(event.toString()))
+    this.eventsSubscription2 = this.events.subscribe(event => this.todos=this.todoService.getTodoByPriority(event.toString()))
+
+
     this.todoService.on(events.deleteTodo, ((td: todo) =>
     {
       this.todos = this.todos.filter(obj => { return obj !== td }); this.todos2 = this.todos2.filter(obj => { return obj !== td });
@@ -103,6 +105,8 @@ export class ListComponent implements OnInit
 
   ngOnDestroy() {
     this.eventsSubscription.unsubscribe();
+    this.eventsSubscription2.unsubscribe();
+
   }
 
 

@@ -1,18 +1,23 @@
-<div class="container">
-  <nav class="navbar mb-4 r-flex">
-    <h1 class="title txt-left mt-0 pl-4 mb-0 flex-grow-1">ToDo App</h1>
+<div class="container hamburger">
+  <nav class="navbar mb-4 r-flex ">
+    <a (click)="showOrHideMenu()"><i class="fa-solid fa-bars fa-3x ml-1"></i></a>
+    <h1 class="title txt-left mt-0 pl-1 mb-0 flex-grow-1">ToDo App</h1>
+
     <span class="ax-current-time">{{
-      currentTime | date: "MMM d, y, HH:mm:ss"
-    }}</span>
-    <mat-slide-toggle class="mr-4" (change)="toggle($event)">{{
+      currentTime | date: "MMM d, y, HH:mm:ss"}}</span>
+
+    <mat-slide-toggle class="" (change)="toggle($event)">{{
       nameTheme
     }}</mat-slide-toggle>
   </nav>
+  <app-menu [currentSettings]="currentSettings" #hello *ngIf="isMenuVisible"></app-menu>
 </div>
 
-<div class="main-content r-flex">
-  <div></div>
-  <app-menu [currentSettings]="currentSettings"></app-menu>
+
+
+<div class="main-content c-flex no-hamburger">
+  <div class="ax-item-fraction"></div>
+  <app-menu [currentSettings]="currentSettings" id="menu"></app-menu>
   <app-content
     [@showContent]
     *ngIf="isVisibleTodoPanel"
@@ -25,7 +30,7 @@
     [ngClass]="order ? '' : 'ax-item'"
   >
   </app-aside>
-  <div class="ax-item-3"></div>
+  <div class="ax-item-3 ax-item-fraction"></div>
 </div>
 
 <div class="content-overlay" [@showEdit] *ngIf="isVisible">

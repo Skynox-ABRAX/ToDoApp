@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { DateFilterFn } from '@angular/material/datepicker';
 import { ToastrService } from 'ngx-toastr';
 import { map, Observable, timer, take } from 'rxjs';

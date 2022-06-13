@@ -1,4 +1,6 @@
 <mat-card class="example-card c-flex">
+
+
   <mat-card-title class="r-flex mt-2">
     <h2 class="flex-grow-1 mt-0 mb-0">Title : {{ todo.title }}</h2>
     <div class="ax-status">
@@ -12,29 +14,36 @@
       <i class="fa-solid fa-tag" [ngClass]="priority"> </i>
     </section>
   </mat-card-title>
+
   <section class="ax-closing">
     <i class="fa-solid fa-bell ax-infos" [ngClass]="song ? 'song' : ''"></i
-    ><span class="pl-1"
+    ><br><span class=""
       ><strong>{{ todo.closing | date: "MMM d, y, H:mm" }}</strong></span
     >
   </section>
+
   <mat-card-content class="mt-2 flex-grow-1">
     <p class="flex-grow-1 ax-content">Content : {{ todo.content }}</p>
-    <div class="ax-other-infos">
-      <section class="ax-date-info">
-        <i class="fa-solid fa-calendar ax-infos"></i
-        ><span>Created : {{ todo.createdAt | date: "MMM d, y, H:mm" }}</span>
-      </section>
-      <section class="r-flex">
-        <div class="ax-footer flex-grow-1">
-          <i class="fa-solid fa-calendar ax-infos"></i
-          ><span class="ax-date-info"
-            >Last update : {{ todo.updatedAt | date: "MMM d, y, H:mm" }}</span
-          >
-        </div>
-      </section>
-    </div>
+
+      <div class="ax-other-infos">
+        <section class="ax-date-info">
+          <i class="fa-solid fa-calendar ax-infos"></i>
+          <span class="ax-created">Created </span>
+          <br>
+          <span class="ax-detail-infos-date">{{ todo.createdAt | date: "MMM d, y, H:mm" }}</span>
+        </section>
+        <section class="r-flex">
+          <div class="ax-footer flex-grow-1">
+            <i class="fa-solid fa-calendar ax-infos"></i>
+            <span class="ax-update">Last update </span>
+            <br>
+            <span class="ax-detail-infos-date">{{ todo.updatedAt | date: "MMM d, y, H:mm" }}</span>
+          </div>
+        </section>
+      </div>
   </mat-card-content>
+
+
   <mat-card-actions class="r-flex">
     <button mat-button (click)="edit(todo)" class="">
       <i class="fa-solid fa-pen-to-square"></i>

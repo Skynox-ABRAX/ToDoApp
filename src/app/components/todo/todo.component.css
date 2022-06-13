@@ -1,10 +1,9 @@
 :host {
-  min-width: calc((100% - 2rem) / 2);
-  max-width: calc((100% - 2rem) / 2);
   background: linear-gradient(to top right, #cad3c8 0%, #98a097 100%);
   padding: 0.5rem;
   border-radius: 0.2rem;
   /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
+  width: 100%;
   font-size: 1.2rem;
 }
 :host .mat-card-title, :host .mat-card-actions, :host mat-card {
@@ -52,10 +51,17 @@
   min-width: 3rem;
   margin: 0;
 }
+:host .ax-created {
+  padding-left: 0.5rem;
+}
 :host .ax-date-info {
   font-size: 0.7rem;
   text-shadow: 2px 2px 0.15em rgba(133, 125, 125, 0.05);
   color: #a09d9d;
+}
+:host .ax-update {
+  padding-left: 0.5rem;
+  font-size: 0.7rem;
 }
 :host .ax-other-infos {
   margin-top: 2rem;
@@ -63,14 +69,16 @@
 :host .ax-other-infos section {
   margin-bottom: 0.5rem;
 }
-:host .ax-other-infos section span {
-  padding-left: 0.5rem;
-}
-:host .ax-other-infos section i {
+:host .ax-other-infos section i, :host .ax-other-infos section .ax-detail-infos-date, :host .ax-other-infos section .ax-update {
   color: #a09d9d;
 }
 :host .ax-other-infos section .ax-infos {
   font-size: 0.8rem;
+}
+:host .ax-detail-infos-date {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
 }
 :host .ax-inprogress {
   background-color: var(--ax-progress);
@@ -147,5 +155,16 @@
   }
   100% {
     transform: rotateZ(0deg);
+  }
+}
+
+@media (min-width: 70rem) {
+  :host {
+    width: 45%;
+  }
+}
+@media (min-width: 90rem) {
+  :host {
+    width: 30%;
   }
 }

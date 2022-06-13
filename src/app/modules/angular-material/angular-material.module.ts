@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { LayoutModule } from '@angular/cdk/layout';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { NgxMatTimepickerModule, NgxMatNativeDateModule, NgxMatDatetimePickerModule} from '@angular-material-components/datetime-picker';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -31,8 +33,10 @@ import { ToastrModule } from 'ngx-toastr'
     MatSlideToggleModule,
     MatStepperModule,
     NgxMatTimepickerModule,
+    MatExpansionModule,
     MatCardModule,
     MatPaginatorModule,
+    LayoutModule,
     ToastrModule.forRoot(),
     NgxMatDatetimePickerModule
     
@@ -50,9 +54,11 @@ import { ToastrModule } from 'ngx-toastr'
     MatSelectModule,
     MatSlideToggleModule,
     MatStepperModule,
+    MatExpansionModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
     MatCardModule,
+    LayoutModule,
     MatPaginatorModule,
     NgxMatDatetimePickerModule
     
