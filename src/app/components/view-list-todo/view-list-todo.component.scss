@@ -80,6 +80,14 @@ i{
     align-self: center;
 }
 
+.mat-card{
+    background-color: var(--ax-bg-matcard);
+}
+
+h2{
+    color: var(--ax-color-title);
+}
+
 
 .song{
     animation: songKeyFrame 2000ms ease infinite;

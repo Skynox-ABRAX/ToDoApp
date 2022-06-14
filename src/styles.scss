@@ -4,14 +4,35 @@
 
 
 
-html, body { height: auto; min-height: 100% }
+html, body { height: auto; min-height: 100vh; scroll-behavior: smooth; }
+
 body { 
     margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: Helvetica, "Helvetica Neue", sans-serif;
     // background: linear-gradient(to top right, rgb(226, 231, 224)0%,rgb(190, 197, 189)100%);
     background-repeat: no-repeat;
     background-color: var(--ax-background);
+    position: relative;
+
 }
+
+.mat-step-header .mat-step-label.mat-step-label-active{
+    color: var(--ax-color-title);
+}
+
+
+.mat-form-field-label{
+    color: var(--ax-color-title);
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button{
+    color: var(--ax-color-actions);
+}
+
+.mat-card{
+    font-family: Helvetica, "Helvetica Neue", sans-serif;
+}
+
 
 .img{
     opacity: 0.6;
@@ -90,6 +111,7 @@ nav{
     row-gap: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 5rem;
 
 
 }
@@ -112,6 +134,15 @@ nav{
 .mat-slide-toggle-content{
     color: white;
 }
+
+.cdk-overlay-pane{
+    z-index: 20000;
+}
+
+.cdk-overlay-container{
+    z-index: 20000;
+}
+
 
 
 

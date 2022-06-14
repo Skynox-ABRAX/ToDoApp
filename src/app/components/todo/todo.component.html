@@ -26,20 +26,21 @@
     <p class="flex-grow-1 ax-content">Content : {{ todo.content }}</p>
 
       <div class="ax-other-infos">
+
         <section class="ax-date-info">
           <i class="fa-solid fa-calendar ax-infos"></i>
           <span class="ax-created">Created </span>
           <br>
           <span class="ax-detail-infos-date">{{ todo.createdAt | date: "MMM d, y, H:mm" }}</span>
         </section>
-        <section class="r-flex">
-          <div class="ax-footer flex-grow-1">
+
+        <section class="ax-date-info">
             <i class="fa-solid fa-calendar ax-infos"></i>
             <span class="ax-update">Last update </span>
             <br>
             <span class="ax-detail-infos-date">{{ todo.updatedAt | date: "MMM d, y, H:mm" }}</span>
-          </div>
         </section>
+
       </div>
   </mat-card-content>
 

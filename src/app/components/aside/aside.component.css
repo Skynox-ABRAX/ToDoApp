@@ -35,7 +35,7 @@
   gap: 2rem;
 }
 :host .fa-plus:before {
-  color: black;
+  color: var(--ax-color-title);
 }
 :host a {
   transition: transform 200ms ease-in;
@@ -43,4 +43,10 @@
 :host a:hover {
   transform: rotateZ(180deg);
   transition: transform 200ms ease-in;
+}
+
+@media (max-width: 36rem) {
+  :host {
+    max-width: 100%;
+  }
 }

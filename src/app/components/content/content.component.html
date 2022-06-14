@@ -10,17 +10,17 @@
       <a (click)="closePanel()"><i class="fa-solid fa-xmark fa-2x"></i></a>
     </div>
 
-    <mat-accordion class="mt-1">
+    <mat-accordion class="mt-1"  #accordion>
 <!-- 
       <mat-expansion-panel hideToggle>
             <p>This is the primary content of the panel.</p>
       </mat-expansion-panel> -->
 
-      <mat-expansion-panel (closed)="panelOpenState = false"
-                           (opened)="panelOpenState = true">
+      <mat-expansion-panel
+                           [expanded]="false">
           <mat-expansion-panel-header>
             <mat-panel-title class="pl-1">
-                Filter
+              <span> <i class="fa-solid fa-filter"></i></span> Filters
             </mat-panel-title>
           </mat-expansion-panel-header>
 
@@ -83,7 +83,7 @@
                 [matBadge]="prt.low"
                 matBadgePosition="after"
                 matBadgeColor="accent"
-                (click)="getFilterPriority($event)"
+                (click)="getFilter($event)"
               >
                 Low
               </button>
@@ -93,7 +93,7 @@
                 [matBadge]="prt.normal"
                 matBadgePosition="after"
                 matBadgeColor="accent"
-                (click)="getFilterPriority($event)"
+                (click)="getFilter($event)"
               >
                 Normal
               </button>
@@ -103,7 +103,7 @@
                 [matBadge]="prt.high"
                 matBadgePosition="after"
                 matBadgeColor="accent"
-                (click)="getFilterPriority($event)"
+                (click)="getFilter($event)"
               >
                 High
               </button>

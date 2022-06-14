@@ -36,7 +36,7 @@ export class AsideComponent implements OnInit {
 
   closePanel()
   {
-      this.todoService.emit(new eventEmit(events.showOrHidePanelPomodoro, {}));
+      this.todoService.emit(new eventEmit(events.destroyPomodoroPanel, {}));
   }
 
 }

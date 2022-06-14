@@ -37,9 +37,40 @@ export class TodoService implements ITodoService {
     throw new Error('Method not implemented.');
   }
 
-  getTodoByStatus(state: string): todo[]
+  getTodoByStatusOrPriority(state: string): todo[]
   {
-    return this._todos.filter(x => x.status === state);
+
+
+    if(state.indexOf('\n') != -1){
+
+      state = state.substring(0, state.indexOf('\n'));
+
+    }
+
+    switch (state) {
+
+      case status.started: case status.inProgress: case status.closed: case status.Canceled :{
+     
+        return this._todos.filter(x => x.status == state);
+
+        break;
+
+      }
+
+    case priority.low: case priority.normal: case priority.high: {
+        return this._todos.filter(x => x.priority == state);
+
+        break;
+      }
+
+
+      default: {
+        return [];
+        break;
+      }
+
+    }
+
   }
 
   getTodoByPriority(state: string): todo[]

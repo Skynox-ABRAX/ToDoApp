@@ -26,11 +26,15 @@
 
     mat-card{
         height: 100%;
+
+    }
+    .mat-card{
+        background-color: var(--ax-bg-matcard);
     }
 
     h2{
         font-size: 1.1rem;
-        color: rgba(40,40,40,0.8);
+        color: var(--ax-color-title);
     }
 
     .ax-content{
@@ -75,7 +79,7 @@
     .ax-date-info{
         font-size: 0.7rem;
         text-shadow: 2px 2px 0.15em rgba(133, 125, 125, 0.05);
-        color: rgb(160, 157, 157);
+        color: var(--ax-color-detail);
 
 
     }
@@ -94,7 +98,7 @@
 
 
        i, .ax-detail-infos-date, .ax-update{
-            color: rgb(160, 157, 157);
+            color: var(--ax-color-detail);;
         }
 
         .ax-infos{
@@ -186,6 +190,21 @@
 
   
 }
+
+
+@media (min-width: 25rem){
+
+    .ax-other-infos{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ax-other-infos > *{
+        flex-grow: 1;
+    }
+
+}
+
 
 
 @media (min-width: 70rem){

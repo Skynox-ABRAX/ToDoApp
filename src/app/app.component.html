@@ -1,4 +1,4 @@
-<div class="container hamburger">
+<div class="container hamburger" id="header">
   <nav class="navbar mb-4 r-flex ">
     <a (click)="showOrHideMenu()"><i class="fa-solid fa-bars fa-3x ml-1"></i></a>
     <h1 class="title txt-left mt-0 pl-1 mb-0 flex-grow-1">ToDo App</h1>
@@ -32,6 +32,15 @@
   </app-aside>
   <div class="ax-item-3 ax-item-fraction"></div>
 </div>
+
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+<ng-container  id="myBtn" *ngIf="isVisibleTopButton" >
+  <button (click)="goToTop()" id="btnTop" class="ax-btn-top" @showTopButton >To Top</button>
+</ng-container>
+
 
 <div class="content-overlay" [@showEdit] *ngIf="isVisible">
   <app-overlay

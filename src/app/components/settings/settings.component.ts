@@ -30,12 +30,14 @@ export class SettingsComponent implements OnInit
     this.tempSettings = {...this.setting};
   }
 
-  closeOverlay()
+
+  closeSettings()
   {
 
-    this.todoService.emit(new eventEmit(events.updateSettings, this.tempSettings));
+    this.todoService.emit(new eventEmit(events.closeSettings, this.tempSettings));
     this.eventEmitter.emit();
   }
+
 
   cancelSettings(e:Event)
   {

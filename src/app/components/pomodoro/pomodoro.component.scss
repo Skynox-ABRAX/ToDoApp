@@ -1,10 +1,15 @@
 :host{
     font-size: 0.9rem;
-    color: rgb(78, 72, 72);
+    color: var(--ax-color-detail);
+    background-color: var(--ax-bg-matcard);
+    padding: 0.5rem;
+    border-radius: 3px;
+
+
 
     .ax-content-header{
         gap: 1rem;
-        color: rgba(40,40,40,0.8);
+        color: var(--ax-color-title);
     }
 
     .ax-trash{
@@ -12,7 +17,7 @@
     }
 
     .ax-green{
-        color: rgb(22, 160, 133);
+        color: var(--ax-bg-timer);
     }
 
     .ax-red{
@@ -22,6 +27,8 @@
     .ax-status-title{
         font-size: 0.7rem;
     }
+
+
 
 }
 

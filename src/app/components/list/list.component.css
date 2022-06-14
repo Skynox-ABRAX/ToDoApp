@@ -20,6 +20,9 @@
 :host mat-paginator {
   order: 3;
 }
+:host .mat-paginator {
+  background-color: var(--ax-bg-matcard);
+}
 
 @media (min-width: 36rem) {
   .ax-content-list {

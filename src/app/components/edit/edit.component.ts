@@ -65,9 +65,9 @@ export class EditComponent implements OnInit {
   {
     e.preventDefault();
     this.currentTodo.updatedAt = new Date(Date.now());
-    this.todoService.emit(new eventEmit(events.addTodo, this.currentTodo));
+    this.todoService.emit(new eventEmit(events.saveTodo, this.currentTodo));
     this.eventEmitter.emit();
-    this.store.dispatch(AddTodo({ td:this.currentTodo }));
+    //this.store.dispatch(AddTodo({ td:this.currentTodo }));
 
 
   }

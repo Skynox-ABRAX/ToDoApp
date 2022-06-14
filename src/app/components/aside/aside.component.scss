@@ -46,7 +46,7 @@
     }
 
     .fa-plus:before{
-        color: black;
+        color: var(--ax-color-title);
     }
     a{
         transition: transform 200ms ease-in;
@@ -56,6 +56,15 @@
             transform: rotateZ(180deg);
             transition: transform 200ms ease-in;
         }
-    
+
+
   
+}
+
+@media (max-width: 36rem){
+
+    :host{
+        max-width: 100%;
+    }
+
 }

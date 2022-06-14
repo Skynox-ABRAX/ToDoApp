@@ -1,0 +1,16 @@
+:host {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 0.8rem;
+  background: linear-gradient(to top right, #4d3671 0%, #29154b 100%);
+  color: white;
+  height: 3rem;
+  line-height: 3rem;
+  position: absolute;
+  bottom: 0;
+}
+:host p {
+  margin-top: 0;
+  margin-bottom: 0;
+}

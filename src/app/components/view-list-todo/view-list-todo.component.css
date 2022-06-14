@@ -76,6 +76,14 @@ i {
   align-self: center;
 }
 
+.mat-card {
+  background-color: var(--ax-bg-matcard);
+}
+
+h2 {
+  color: var(--ax-color-title);
+}
+
 .song {
   -webkit-animation: songKeyFrame 2000ms ease infinite;
           animation: songKeyFrame 2000ms ease infinite;

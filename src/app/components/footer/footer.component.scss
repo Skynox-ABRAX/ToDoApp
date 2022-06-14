@@ -1,0 +1,17 @@
+:host{
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 0.8rem;
+    background: linear-gradient(to top right, rgb(77, 54, 113) 0%, rgb(41, 21, 75) 100%) ;
+    color: white;
+    height: 3rem;
+    line-height: 3rem;
+    position: absolute;
+    bottom: 0;
+
+    & p{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

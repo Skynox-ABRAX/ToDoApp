@@ -1,5 +1,6 @@
 :host{
     margin: 20rem;
+
 }
 
 .mat-form-field{
@@ -7,9 +8,10 @@
 }
 
 .ax-edit{
-    background-color: white;
+    background-color: var(--ax-bg-matcard);
     padding: 2rem;
 }
+
 
 a{
     align-self: flex-end;
@@ -17,6 +19,7 @@ a{
     margin-right: -1rem;
     width: 4rem;
     cursor: pointer;
+    color: var(--ax-color-title)
 
 }
 

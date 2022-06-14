@@ -37,7 +37,7 @@ import { settings } from 'src/app/models/settings';
 export class ListComponent implements OnInit
 {
   private eventsSubscription: Subscription;
-  private eventsSubscription2: Subscription;
+  // private eventsSubscription2: Subscription;
 
   @Input() events: Observable<string>;
 
@@ -61,13 +61,12 @@ export class ListComponent implements OnInit
   ngOnInit(): void
   {
 
+    this.resetTodos();
 
-    this.todos2 = this.todoService.getAllTodo();
-    this.todos = this.todos2.slice(0, 5);
+
+    this.todoService.on(events.reset, ((td: todo) => this.resetTodos()));
     
-    this.eventsSubscription = this.events.subscribe(event => this.todos=this.todoService.getTodoByStatus(event.toString()))
-    this.eventsSubscription2 = this.events.subscribe(event => this.todos=this.todoService.getTodoByPriority(event.toString()))
-
+    this.eventsSubscription = this.events.subscribe(event => { this.todos=this.todoService.getTodoByStatusOrPriority(event.toString()); console.log("todos filter", this.todos); console.log("event", event.toString()); console.log("event only", event);})
 
     this.todoService.on(events.deleteTodo, ((td: todo) =>
     {
@@ -85,9 +84,17 @@ export class ListComponent implements OnInit
 
   
     }));
+
     this.todoService.on(events.addTodo, ((td: todo) => { this.todoService.checkIfTodoExists(td, this.todos)? this.todos.push(td):'' }));
     this.todoService.on(events.switchView, ((td: todo) => { this.isDetail = !this.isDetail }));
     this.todoService.on(events.updateSettings, ((st: settings) => { this.isDetail = (st.view === 'detail'); }));
+  }
+
+  resetTodos(){
+
+    this.todos2 = this.todoService.getAllTodo();
+    this.todos = this.todos2.slice(0, 5);
+
   }
 
   onChangePage(pe: PageEvent)
@@ -105,7 +112,6 @@ export class ListComponent implements OnInit
 
   ngOnDestroy() {
     this.eventsSubscription.unsubscribe();
-    this.eventsSubscription2.unsubscribe();
 
   }
 

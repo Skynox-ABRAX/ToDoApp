@@ -28,10 +28,16 @@ body {
   --ax-progress: rgb(196, 229, 56);
   --ax-closed: rgb(237, 76, 103);
   --ax-canceled: rgb(247, 183, 49);
+  --ax-color-title:rgba(40,40,40,0.8);
+  --ax-color-detail: rgb(160,160,160);
+  --ax-color-header: rgba(255,255,255);
+  --ax-bg-timer: rgb(78, 161, 84);
+  --ax-color-actions: rgba(30,30,30,0.9);
   --ax-background: rgba(230, 224, 224, 0.05);
-  --ax-low: rgb(253, 167, 223);
-  --ax-normal:rgb(32, 191, 107);
-  --ax-high:rgb(234, 32, 39);
+  --ax-bg-matcard: white;
+  --ax-low: rgb(233,203,106);
+  --ax-normal:rgb(54,163,85);
+  --ax-high:rgb(213,43,93);
   --ax-primary-400: rgb(99, 110, 114);
   /*--ax-primary-400: rgb(184, 41, 124);*/
   --ax-rgb-primary: 201,23,127;
@@ -443,14 +449,32 @@ body {
 
 html, body {
   height: auto;
-  min-height: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
   background-repeat: no-repeat;
   background-color: var(--ax-background);
+  position: relative;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+  color: var(--ax-color-title);
+}
+
+.mat-form-field-label {
+  color: var(--ax-color-title);
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button {
+  color: var(--ax-color-actions);
+}
+
+.mat-card {
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
 }
 
 .img {
@@ -519,6 +543,7 @@ nav {
   row-gap: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 5rem;
 }
 
 .ax-low {
@@ -535,6 +560,14 @@ nav {
 
 .mat-slide-toggle-content {
   color: white;
+}
+
+.cdk-overlay-pane {
+  z-index: 20000;
+}
+
+.cdk-overlay-container {
+  z-index: 20000;
 }
 
 @media (min-width: 50rem) {

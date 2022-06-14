@@ -54,8 +54,13 @@ export class MenuComponent implements OnInit
   editSettings(e: Event)
   {
     e.preventDefault();
-    this.todoService.emit(new eventEmit(events.updateSettings, this.currentSettings));
+    this.todoService.emit(new eventEmit(events.openSettings, this.currentSettings));
 
+  }
+
+  reset()
+  {
+    this.todoService.emit(new eventEmit(events.reset, todo));
   }
 
   

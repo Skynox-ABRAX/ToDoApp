@@ -38,7 +38,7 @@ export class TodoComponent implements OnInit {
       createdAt: this.todo.updatedAt
     });
     
-    this.todoService.emit(new eventEmit(events.closeOverlay, todo2));
+    this.todoService.emit(new eventEmit(events.openOverlay, todo2));
 
   }
 

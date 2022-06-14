@@ -1,4 +1,4 @@
-import { animate, animation, keyframes, query, sequence, stagger, style, transition, trigger, useAnimation } from "@angular/animations";
+import { animate, animation, keyframes, query, sequence, stagger, state, style, transition, trigger, useAnimation } from "@angular/animations";
 
 export const showTodoAnimation = [
   trigger('showTilesTodo', [
@@ -17,6 +17,16 @@ export const showTodoAnimation = [
     ])
   ])
 ];
+
+export const showTopButton = [
+  trigger('showTopButton', [
+      state('void', style({ opacity: 0 })),
+      state('*', style({ opacity: 1 })),
+      transition(':enter', animate('300ms ease-out')),
+      transition(':leave', animate('300ms ease-in')),
+    ])
+ ];
+
 
 
 export const showListAnimation = [

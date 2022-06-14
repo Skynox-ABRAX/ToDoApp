@@ -60,14 +60,14 @@
   font-size: 1rem;
 }
 :host .ax-level-detail {
-  width: 60px;
+  width: 80px;
   height: 40px;
   color: black;
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   margin: auto;
   margin-top: 1rem;
   border-radius: 3px;
-  text-align: center;
+  text-align: left;
   line-height: 20px;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
@@ -83,6 +83,13 @@
 :host .section-body {
   margin-top: 2rem;
   align-items: center;
+}
+:host .fa-filter:before {
+  color: var(--ax-secondary-boxshadow);
+  left: 1.5rem;
+}
+:host .mat-expansion-panel {
+  background-color: var(--ax-bg-matcard);
 }
 
 @media (min-width: 25rem) {

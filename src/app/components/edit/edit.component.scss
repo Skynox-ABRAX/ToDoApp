@@ -12,8 +12,13 @@ mat-stepper{
 }
 
 .ax-edit{
-    background-color: white;
+    background-color: var(--ax-bg-matcard);
 }
+
+.mat-stepper-horizontal, .mat-stepper-vertical{
+    background-color: var(--ax-bg-matcard);
+}
+
 
 a{
     align-self: flex-end;
@@ -21,12 +26,15 @@ a{
     margin-right: -1rem;
     width: 4rem;
     cursor: pointer;
+    color: var(--ax-color-title);
 
 }
 
 .ax-content{
     width: 50%;
 }
+
+
 
 @media (min-width: 50rem){
 

@@ -22,9 +22,12 @@
 :host mat-card {
   height: 100%;
 }
+:host .mat-card {
+  background-color: var(--ax-bg-matcard);
+}
 :host h2 {
   font-size: 1.1rem;
-  color: rgba(40, 40, 40, 0.8);
+  color: var(--ax-color-title);
 }
 :host .ax-content {
   color: #141414;
@@ -57,7 +60,7 @@
 :host .ax-date-info {
   font-size: 0.7rem;
   text-shadow: 2px 2px 0.15em rgba(133, 125, 125, 0.05);
-  color: #a09d9d;
+  color: var(--ax-color-detail);
 }
 :host .ax-update {
   padding-left: 0.5rem;
@@ -70,7 +73,7 @@
   margin-bottom: 0.5rem;
 }
 :host .ax-other-infos section i, :host .ax-other-infos section .ax-detail-infos-date, :host .ax-other-infos section .ax-update {
-  color: #a09d9d;
+  color: var(--ax-color-detail);
 }
 :host .ax-other-infos section .ax-infos {
   font-size: 0.8rem;
@@ -158,6 +161,16 @@
   }
 }
 
+@media (min-width: 25rem) {
+  .ax-other-infos {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ax-other-infos > * {
+    flex-grow: 1;
+  }
+}
 @media (min-width: 70rem) {
   :host {
     width: 45%;

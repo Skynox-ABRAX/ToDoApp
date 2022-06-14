@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store'; 
 import { todoReducer } from './store/reducers/todo.reducer';
 import { TodoReducers } from './store/reducers/index';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -43,7 +44,8 @@ import { TodoReducers } from './store/reducers/index';
     EditComponent,
     PomodoroComponent,
     ViewListTodoComponent,
-    SettingsComponent
+    SettingsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
