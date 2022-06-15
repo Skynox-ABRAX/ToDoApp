@@ -1,8 +1,8 @@
 <form class="example-form ax-edit c-flex">
-  <a (click)="closeSettings()"><i class="fa-solid fa-circle-xmark fa-3x"></i></a>
+  <a (click)="closeSettings()" role="button" aria-label="close the form"><i class="fa-solid fa-circle-xmark fa-3x"></i></a>
   <section class="c-flex mt-2 ax-time">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Hour</mat-label>
+      <mat-label for="hour">Hour</mat-label>
       <input
         type="number"
         matInput
@@ -10,10 +10,11 @@
         name="hour"
         value="setting.hour"
         [(ngModel)]="setting.hour"
+        id="hour"
       />
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Minute</mat-label>
+      <mat-label for="minute">Minute</mat-label>
       <input
         type="number"
         matInput
@@ -21,10 +22,11 @@
         name="minute"
         value="setting.minute"
         [(ngModel)]="setting.minute"
+        id="minute"
       />
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Second</mat-label>
+      <mat-label for="second">Second</mat-label>
       <input
         type="number"
         matInput
@@ -32,9 +34,11 @@
         name="second"
         value="setting.second"
         [(ngModel)]="setting.second"
+        id="second"
       />
     </mat-form-field>
   </section>
+
   <mat-form-field appearance="fill" class="mt-2">
     <mat-label>Choose a default theme</mat-label>
     <mat-select [(ngModel)]="setting.theme" name="theme">
@@ -43,6 +47,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
   <mat-form-field appearance="fill" class="mt-2">
     <mat-label>Choose a default view</mat-label>
     <mat-select [(ngModel)]="setting.view" name="view">
@@ -51,9 +56,10 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
   <div class="example-button-row">
-    <button mat-button (click)="cancelSettings($event)">Cancel</button>
-    <button mat-button color="primary" (click)="saveSettings($event)">
+    <button mat-button (click)="cancelSettings($event)" role="button" aria-label="cancel the edit form">Cancel</button>
+    <button mat-button color="primary" (click)="saveSettings($event)" role="button" aria-label="save the edit form">
       Save
     </button>
   </div>

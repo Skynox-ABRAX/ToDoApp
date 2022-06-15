@@ -26,7 +26,7 @@ export const dark: Theme = {
        "--ax-bg-timer": "rgba(213,217,79,1)",
         "--ax-color-detail": "rgb(255,255,255)",
         "--ax-color-title" :"rgba(240,240,240,1)",
-        "--ax-color-header" : "rgba(210,100,123,1)",
+        "--ax-color-header" : "rgba(145,145,215,1)",
 
 
     }

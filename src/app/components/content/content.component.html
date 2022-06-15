@@ -3,29 +3,24 @@
     <div class="section-header r-flex txt-left pl-1 pr-2">
       <div class="title r-flex">
         <h2 class="mt-0 mb-0">Summary</h2>
-        <a class="ax-list-todo" (click)="showListTodo()"
+        <a class="ax-list-todo" (click)="showListTodo()" role ="button" aria-label="switch the view todo to list or detail"
           ><i class="fa-solid fa-list"></i
         ></a>
       </div>
-      <a (click)="closePanel()"><i class="fa-solid fa-xmark fa-2x"></i></a>
+      <a (click)="closePanel()" role ="button" aria-label="close the todo panel"><i class="fa-solid fa-xmark fa-2x"></i></a>
     </div>
 
     <mat-accordion class="mt-1"  #accordion>
-<!-- 
-      <mat-expansion-panel hideToggle>
-            <p>This is the primary content of the panel.</p>
-      </mat-expansion-panel> -->
 
-      <mat-expansion-panel
-                           [expanded]="false">
+      <mat-expansion-panel [expanded]="false">
           <mat-expansion-panel-header>
             <mat-panel-title class="pl-1">
-              <span> <i class="fa-solid fa-filter"></i></span> Filters
+              <span role="button" aria-label="open panel to filter todo list by status or priority"> <i class="fa-solid fa-filter"></i></span> Filters
             </mat-panel-title>
           </mat-expansion-panel-header>
 
         <div class="section-body c-flex">
-          <ul class="list-style-none c-flex mt-0">
+          <ul class="list-style-none c-flex mt-0" role="menu" aria-labelledby="menu-1">
             <li class="mb-1">
               <button
                 mat-raised-button
@@ -34,6 +29,7 @@
                 matBadgePosition="before"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 Started
               </button>
@@ -46,6 +42,7 @@
                 matBadgePosition="before"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 InProgress
               </button>
@@ -58,6 +55,7 @@
                 matBadgePosition="before"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 Closed
               </button>
@@ -70,6 +68,7 @@
                 matBadgePosition="before"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 Canceled
               </button>
@@ -84,6 +83,7 @@
                 matBadgePosition="after"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 Low
               </button>
@@ -94,6 +94,7 @@
                 matBadgePosition="after"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 Normal
               </button>
@@ -104,6 +105,7 @@
                 matBadgePosition="after"
                 matBadgeColor="accent"
                 (click)="getFilter($event)"
+                role="menuitem"
               >
                 High
               </button>
@@ -113,12 +115,11 @@
       </mat-expansion-panel>
     </mat-accordion>
 
-    
-
   </section>
 
   <app-list
     class="mt-2"
     [events]="eventParentSubject.asObservable()"
   ></app-list>
+  
 </div>

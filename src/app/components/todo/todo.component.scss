@@ -1,27 +1,27 @@
 :host{
-    // min-width: calc((100% - 2rem) / 2);
-    // max-width: calc((100% - 2rem) / 2);
+
     background: linear-gradient(to top right, rgb(202, 211, 200)0%,rgb(152, 160, 151)100%);
     padding: 0.5rem;
     border-radius: 0.2rem;
-    /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
     width: 100%;
     font-size: 1.2rem;
 
-    .mat-card-title, .mat-card-actions, mat-card{
+    .mat-card-title, .mat-card-actions, mat-card, mat-card-content{
         display: flex;
+    }
+
+    .mat-card-title, .mat-card-actions, mat-card{
         gap: 1rem;
     }
 
     mat-card-content{
-        display: flex;
-        flex-direction: column;
+         flex-direction: column;
     }
 
     .mat-card-actions{
         gap: 0;
-       justify-content: flex-end;
-       padding-top: 0;
+        justify-content: flex-end;
+        padding-top: 0;
     }
 
     mat-card{
@@ -37,6 +37,11 @@
         color: var(--ax-color-title);
     }
 
+    h3{
+        font-weight: 500;
+        color: white;
+    }
+
     .ax-content{
         color: rgb(20,20,20);
         line-height: 1.4rem;
@@ -47,16 +52,9 @@
         height: 100%;
     }
 
-    h3{
-        font-weight: 500;
-        color: white;
-    }
-
     .section-header{
         gap:1rem;
     }
-
-
 
 
     .mat-mini-fab{
@@ -80,8 +78,6 @@
         font-size: 0.7rem;
         text-shadow: 2px 2px 0.15em rgba(133, 125, 125, 0.05);
         color: var(--ax-color-detail);
-
-
     }
 
     .ax-update{
@@ -103,7 +99,6 @@
 
         .ax-infos{
             font-size: 0.8rem;
-    
         }
     }
 
@@ -112,18 +107,15 @@
         display: block;
         margin-top: 0.5rem;
         font-size: 0.7rem;
-
     }
 
 
     .ax-inprogress{
         background-color: var(--ax-progress);
     }
-
     
     .ax-closed{
         background-color: var(--ax-closed);
-        
     }
 
     .ax-canceled{
@@ -140,55 +132,55 @@
         align-self: center;
         margin-top: 1rem;
     }
-.mat-card>:first-child{
-    margin-top: 1.5rem;
-}
 
-.song{
-    animation: songKeyFrame 2000ms ease infinite;
-}
-
-@keyframes songKeyFrame {
-    
-    0%{
-        transform: rotateZ(-30deg);
+    .mat-card>:first-child{
+        margin-top: 1.5rem;
     }
 
-    15%{
-
-        transform: rotateZ(30deg);
+    .song{
+        animation: songKeyFrame 2000ms ease infinite;
     }
 
-    30%{
-        transform: rotateZ(-30deg);
+    @keyframes songKeyFrame {
+        
+        0%{
+            transform: rotateZ(-30deg);
+        }
+
+        15%{
+
+            transform: rotateZ(30deg);
+        }
+
+        30%{
+            transform: rotateZ(-30deg);
+        }
+
+        45%{
+
+            transform: rotateZ(20deg);
+        }
+
+        60%{
+            transform: rotateZ(-30deg);
+        }
+
+        75%{
+
+            transform: rotateZ(30deg);
+        }
+
+        76%{
+            transform: rotateZ(0deg);
+        }
+
+        100%{
+            transform: rotateZ(0deg);
+        }
+
+
     }
-
-    45%{
-
-        transform: rotateZ(20deg);
-    }
-
-    60%{
-        transform: rotateZ(-30deg);
-    }
-
-    75%{
-
-        transform: rotateZ(30deg);
-    }
-
-    76%{
-        transform: rotateZ(0deg);
-    }
-
-    100%{
-        transform: rotateZ(0deg);
-    }
-
-
-}
-
-  
+ 
 }
 
 

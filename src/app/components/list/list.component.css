@@ -17,11 +17,9 @@
 :host .order2 {
   order: 2;
 }
-:host mat-paginator {
-  order: 3;
-}
 :host .mat-paginator {
   background-color: var(--ax-bg-matcard);
+  order: 3;
 }
 
 @media (min-width: 36rem) {

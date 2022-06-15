@@ -1,7 +1,7 @@
 <menu class="pl-0 mt-0">
   <ul class="list-style-none ax-list pt-4 pb-4 pl-0 mt-0 txt-center">
     <li [@showMenu]>
-      <a [routerLink]="['/']" (click)="reset()"
+      <a [routerLink]="['/']" (click)="reset()" role="button" aria-label="restart the view of todo"
         ><i
           class="fa-solid fa-house-chimney fa-3x ax-icon ax-br-circle mb-1"
         ></i
@@ -9,27 +9,27 @@
     </li>
 
     <li [@showMenu]>
-      <a (click)="showOrHideTodoPanel()"
+      <a (click)="showOrHideTodoPanel()" role="button" aria-label="show or hide todo panel"
         ><i class="fa-solid fa-list-check fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
     <li [@showMenu]>
-      <a (click)="addTodo()"
+      <a (click)="addTodo()" role="button" aria-label="open form for adding todo"
         ><i class="fa-solid fa-plus fa-3x ax-icon ax-br-circle mb-1"> </i>
       </a>
     </li>
     <li [@showMenu]>
-      <a (click)="showOrHidePomodoroPanel()"
+      <a (click)="showOrHidePomodoroPanel()" role="button" aria-label="show or hide pomodoro panel"
         ><i class="fa-solid fa-clock fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
     <li [@showMenu]>
-      <a (click)="switchPanel()"
+      <a (click)="switchPanel()" role="button" aria-label="switch order panel todo and pomodoro"
         ><i class="fa-solid fa-repeat fa-3x ax-icon ax-br-circle mb-1"></i
       ></a>
     </li>
     <li [@showMenu]>
-      <a (click)="editSettings($event)"
+      <a (click)="editSettings($event)" role="button" aria-label="open form for editing settings"
         ><i class="fa-solid fa-gear fa-3x ax-icon ax-br-circle"></i
       ></a>
     </li>

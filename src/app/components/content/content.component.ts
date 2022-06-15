@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion, MatExpansionPanel } from '@angular/material/expansion';
-import { Event } from '@angular/router';
 import { Subject } from 'rxjs';
+
 import { events } from 'src/app/enums/eventsEnum';
 import { category } from 'src/app/models/category';
 import { eventEmit } from 'src/app/models/eventEmit';
@@ -27,8 +27,6 @@ export class ContentComponent implements OnInit
   @ViewChild('accordion') accordion: ElementRef<MatAccordion>;
 
 
-
-
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void
@@ -38,24 +36,14 @@ export class ContentComponent implements OnInit
     this.prt = new level(this.todoService.getNumberItemsByPriority());
 
     this.accordion.nativeElement.closeAll();
-
-    /*this.todoService.on(events.addTodo, ((td: todo) => { this.cat = new category(this.todoService.getNumberItemsByCategory()) }));*/
     this.cat2 = this.cat.started;
   }
 
   getFilter(event: any)
   {
-
     console.log("from filter", event);
     this.eventParentSubject.next(event.target.innerText);
   }
-
-  // getFilterPriority(event: any)
-  // {
-  //   this.eventParentSubject.next(event.target.innerText);
-  // }
-
-
 
   closePanel()
   {
@@ -64,7 +52,6 @@ export class ContentComponent implements OnInit
 
   showListTodo()
   {
-
     this.todoService.emit(new eventEmit(events.switchView, todo));
   }
 

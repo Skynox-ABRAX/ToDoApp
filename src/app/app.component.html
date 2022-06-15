@@ -1,12 +1,12 @@
 <div class="container hamburger" id="header">
   <nav class="navbar mb-4 r-flex ">
-    <a (click)="showOrHideMenu()"><i class="fa-solid fa-bars fa-3x ml-1"></i></a>
+    <a (click)="showOrHideMenu()" role="button" aria-label="toggle the visibility of hamburger menu"><i class="fa-solid fa-bars fa-3x ml-1"></i></a>
     <h1 class="title txt-left mt-0 pl-1 mb-0 flex-grow-1">ToDo App</h1>
 
     <span class="ax-current-time">{{
       currentTime | date: "MMM d, y, HH:mm:ss"}}</span>
 
-    <mat-slide-toggle class="" (change)="toggle($event)">{{
+    <mat-slide-toggle class="" (change)="toggle($event)" role="button" aria-label="toggle the theme">{{
       nameTheme
     }}</mat-slide-toggle>
   </nav>

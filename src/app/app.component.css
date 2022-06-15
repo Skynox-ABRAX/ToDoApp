@@ -69,6 +69,10 @@ i {
   display: none;
 }
 
+.hamburger {
+  position: relative;
+}
+
 @media (width: 1000px) {
   .fa-bars {
     display: none;
@@ -82,18 +86,6 @@ i {
     display: block;
   }
 }
-.hamburger {
-  position: relative;
-}
-
-.visible {
-  display: block;
-}
-
-.no-visible {
-  display: none;
-}
-
 @media (min-width: 25rem) {
   .ax-current-time {
     display: block;

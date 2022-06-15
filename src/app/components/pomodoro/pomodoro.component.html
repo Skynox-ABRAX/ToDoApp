@@ -1,19 +1,21 @@
 <section class="ax-content-header r-flex">
+
   <h3 class="flex-grow-1 mt-0 mb-0">
     Pomodoro {{ pomodoro._id }}
     <span class="ax-status-title">{{ statusTitle }}</span>
   </h3>
-  <a (click)="startOrStop()"
+  <a (click)="startOrStop()" role="button" aria-label="start or stop the pomodoro"
     ><i class="fa-solid fa-clock" [ngClass]="statusClock"></i
   ></a>
-  <a (click)="reset()"><i class="fa-solid fa-clock-rotate-left"></i></a>
+  <a (click)="reset()" role="button" aria-label="restart the pomodoro"><i class="fa-solid fa-clock-rotate-left"></i></a>
+
 </section>
+
 <section class="r-flex mt-1">
+
   <div class="flex-grow-1">{{ timing2 | date: "HH:mm:ss" }}</div>
-  <!-- <div>Date Start: {{ pomodoro._dateStart | date: "shortTime" }}</div>
-<div>Date End: {{ pomodoro._dateEnd | date: "shortTime" }}</div> -->
-  <!-- <div class="mt-1">Time remaining: {{ this.test._timeRemaining }}</div> -->
-  <a (click)="deletePomodoro()" class="ax-trash"
+  <a (click)="deletePomodoro()" role="button" aria-label="trash the pomodoro" class="ax-trash"
     ><i class="fa-solid fa-trash"></i
   ></a>
+  
 </section>

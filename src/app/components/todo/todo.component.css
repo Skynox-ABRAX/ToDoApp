@@ -2,16 +2,16 @@
   background: linear-gradient(to top right, #cad3c8 0%, #98a097 100%);
   padding: 0.5rem;
   border-radius: 0.2rem;
-  /*box-shadow: 2px 2px 0.25em rgb(255,255,255);*/
   width: 100%;
   font-size: 1.2rem;
 }
-:host .mat-card-title, :host .mat-card-actions, :host mat-card {
+:host .mat-card-title, :host .mat-card-actions, :host mat-card, :host mat-card-content {
   display: flex;
+}
+:host .mat-card-title, :host .mat-card-actions, :host mat-card {
   gap: 1rem;
 }
 :host mat-card-content {
-  display: flex;
   flex-direction: column;
 }
 :host .mat-card-actions {
@@ -29,6 +29,10 @@
   font-size: 1.1rem;
   color: var(--ax-color-title);
 }
+:host h3 {
+  font-weight: 500;
+  color: white;
+}
 :host .ax-content {
   color: #141414;
   line-height: 1.4rem;
@@ -36,10 +40,6 @@
 :host .todo {
   row-gap: 1rem;
   height: 100%;
-}
-:host h3 {
-  font-weight: 500;
-  color: white;
 }
 :host .section-header {
   gap: 1rem;

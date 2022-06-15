@@ -3,8 +3,8 @@ import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, HostListener, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
-import { Store } from '@ngrx/store';
 import { showAsideAnimation, showContentAnimation, showEditAnimation, showTopButton } from './animations/animations';
+
 import { MenuComponent } from './components/menu/menu.component';
 import { events } from './enums/eventsEnum';
 import { settings } from './models/settings';
@@ -12,7 +12,7 @@ import { settings } from './models/settings';
 import { todo } from './models/todo';
 import { ThemeService } from './services/theme.service';
 import { TodoService } from './services/todo.service';
-import { AddTodo } from './store/actions/todo.action';
+
 
 
 
@@ -23,6 +23,7 @@ import { AddTodo } from './store/actions/todo.action';
   animations:[showContentAnimation, showAsideAnimation, showEditAnimation, showTopButton]
 })
 export class AppComponent implements AfterViewInit{
+
   title = 'ToDoApp';
   campaignOne: FormGroup;
   campaignTwo: FormGroup;
@@ -48,26 +49,21 @@ export class AppComponent implements AfterViewInit{
   }
 
 
-  constructor(elem: ElementRef, renderer: Renderer2, private todoService: TodoService,     private themeService: ThemeService, private store: Store, public breakpointObserver: BreakpointObserver, private viewportScroller: ViewportScroller) {
+  constructor(
+    private todoService: TodoService,     
+    private themeService: ThemeService, 
+    public breakpointObserver: BreakpointObserver, 
+    private viewportScroller: ViewportScroller) {
+    
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
 
-    this.campaignOne = new FormGroup({
-      start: new FormControl(new Date(year, month, 13)),
-      end: new FormControl(new Date(year, month, 16)),
-    });
-
-    this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month, 15)),
-      end: new FormControl(new Date(year, month, 19)),
-    });
-  }
+   }
 
 
   ngAfterViewInit(): void {
-    //console.log("menucomponent:", this.test);
-  }
+    }
 
 
   ngOnInit()
@@ -98,29 +94,29 @@ export class AppComponent implements AfterViewInit{
     this.todoService.on(events.closeSettings, ((st:settings) => { this.isVisible = true; this.isEdit = false; this.currentSettings=st;}));
     this.todoService.on(events.reset, ((td: todo) => { this.showOrHideMenu();}));
 
-    this.setLightbulb();
     this.id2 = setInterval(()=> this.currentTime= Date.now(), 1000)
   }
 
-  closeOverlay()
-  {
+  closeOverlay() {
+
     this.isVisible = false;
+
     if(!this.isMenuVisible){
         this.isMenuVisible=this.isMenuVisible
     }
 
   }
 
-  setLightbulb() {
-
-  }
 
   toggle(event: MatSlideToggleChange) {
+
     this.useDefault = event.checked;
     this.toggleTheme();
+
 }
 
   toggleTheme() {
+
     if (this.themeService.isDarkTheme()) {
       this.themeService.setLightTheme();
       this.nameTheme = "light";
@@ -129,38 +125,35 @@ export class AppComponent implements AfterViewInit{
       this.nameTheme = "dark";
     }
 
-    this.setLightbulb();
   }
 
   showOrHideMenu(){
 
-
     this.isMenuVisible=!this.isMenuVisible;
-
   }
 
 
   onClickScroll(elementId: string): void{
+
     this.viewportScroller.scrollToAnchor(elementId);
   }
 
 
-  // When the user scrolls down 20px from the top of the document, show the button
-scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        this.isVisibleTopButton=true;
-       // document.getElementById("btnTop").classList.toggle("appearing");
-    } else {
-      this.isVisibleTopButton=false;
-      //setTimeout(()=>{document.getElementById("myBtn").style.display = "none"}, 300);
-        document.getElementById("btnTop").classList.toggle("appearing");
-    }
-}
+  scrollFunction() {
 
-// When the user clicks on the button, scroll to the top of the document
-goToTop() {
-  this.onClickScroll('header');
-} 
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          this.isVisibleTopButton=true;
+      } else {
+        this.isVisibleTopButton=false;
+      }
+
+  }
+
+  goToTop() {
+
+    this.onClickScroll('header');
+
+  } 
 
 
 

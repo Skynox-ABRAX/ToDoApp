@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { showMenuAnimation, showTodoAnimation } from 'src/app/animations/animations';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
@@ -22,18 +23,24 @@ export class MenuComponent implements OnInit
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-
-    
+  
 
   }
 
-  /**
-   * function to add a  new todo
-   */
+
   addTodo()
   {
 
-    this.todoService.emit(new eventEmit(events.addTodo, new todo({ id: 0, title: '', content: '', status: status.started, priority: priority.normal, closing: new Date(), updatedAt: new Date(), createdAt: new Date()})));
+    this.todoService.emit(new eventEmit(events.addTodo, new todo({ 
+        id: 0, title: '', 
+        content: '', 
+        status: status.started, 
+        priority: priority.normal, 
+        closing: new Date(), 
+        updatedAt: new Date(), 
+        createdAt: new Date()
+      })
+    ));
   }
 
   showOrHidePomodoroPanel()
@@ -55,7 +62,6 @@ export class MenuComponent implements OnInit
   {
     e.preventDefault();
     this.todoService.emit(new eventEmit(events.openSettings, this.currentSettings));
-
   }
 
   reset()

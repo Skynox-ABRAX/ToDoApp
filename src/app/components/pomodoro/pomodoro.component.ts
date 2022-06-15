@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { DateFilterFn } from '@angular/material/datepicker';
+
 import { ToastrService } from 'ngx-toastr';
-import { map, Observable, timer, take } from 'rxjs';
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
 import { pomodoro } from 'src/app/models/pomodoro';
@@ -21,7 +20,6 @@ export class PomodoroComponent implements OnInit {
   @Input() setting: settings;
 
   timeRemaining: Date;
-  test2: string;
   timing: Date;
   timing2: Date;
   currentTime: Date;
@@ -30,19 +28,8 @@ export class PomodoroComponent implements OnInit {
   status: boolean = false;
   statusClock = 'ax-green';
   statusTitle: string = '';
-
-
-
-  /*timers$: Observable<number>;*/
-  test = new pomodoro(0, new Date(), new Date(), new Date());
+  startingTime = new pomodoro(0, new Date(), new Date(), new Date());
   id: any;
-
-// startTimer(counter: number) {
-//   this.timers$ = timer(0, 1000).pipe(
-//     take(counter),
-//     map(_ => --counter)
-//   );
-// }
 
   constructor(private changeDetector: ChangeDetectorRef, private todoService: TodoService, private toastr: ToastrService)
   { 
@@ -91,14 +78,11 @@ export class PomodoroComponent implements OnInit {
       this.toastr.error("The pomodoro is paused!")
       this.statusTitle = " - paused";
     }
-
-
      
   }
 
   playAudio(){
     let audio = new Audio();
-    /*audio.src = "../../../assets/audio/alarm.wav";*/
     audio.load();
     audio.play();
   }
@@ -106,10 +90,7 @@ export class PomodoroComponent implements OnInit {
 
   setTime()
   {
-
-    this.test = new pomodoro(0,new Date(),new Date(), new Date());
-
-   /* this.changeDetector.detectChanges();*/
+    this.startingTime = new pomodoro(0,new Date(),new Date(), new Date());
   }
 
 

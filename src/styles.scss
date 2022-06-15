@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @use "app/scss/utilities";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
@@ -9,19 +8,13 @@ html, body { height: auto; min-height: 100vh; scroll-behavior: smooth; }
 body { 
     margin: 0; 
     font-family: Helvetica, "Helvetica Neue", sans-serif;
-    // background: linear-gradient(to top right, rgb(226, 231, 224)0%,rgb(190, 197, 189)100%);
     background-repeat: no-repeat;
     background-color: var(--ax-background);
     position: relative;
 
 }
 
-.mat-step-header .mat-step-label.mat-step-label-active{
-    color: var(--ax-color-title);
-}
-
-
-.mat-form-field-label{
+.mat-step-header .mat-step-label.mat-step-label-active, .mat-form-field-label {
     color: var(--ax-color-title);
 }
 
@@ -45,7 +38,6 @@ body {
     font-size: 1rem;
     line-height: 4rem;
     text-shadow: 2px 2px rgb(0,0,0,0.2);
-    // flex-grow: 2;
     flex-grow: 1;
 
 
@@ -57,8 +49,6 @@ nav{
 
 .navbar{
     background: url("/assets/background.png") , var(--ax-primary-boxshadow);
-    /*box-shadow: 0 0 0.7em 0.3em rgb(240, 167, 65, 0.5);*/
-    /*border-bottom: 2px solid rgb(240, 167, 65);*/
     height: 4rem;
     transition: background 200ms ease-in;
 }
@@ -70,8 +60,6 @@ nav{
     background: var(--ax-secondary-boxshadow) ;
     color: black;
     position: relative;
-    /*border: 3px solid var(--ax-primary-400);*/
-   /* box-shadow: 0 0 0.2em 0.1em rgb(236, 232, 228);*/
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     transform: scale(1);
     transition: transform 150ms ease-in, background 200ms ease-in;
@@ -98,8 +86,6 @@ nav{
 .ax-list{
     width: 110px;
     height: auto;
-    /*background-color: rgb(44, 58, 71);*/
-    /*box-shadow:  0px 0px 0.2em 0.1em rgba(204, 188, 46, 0.5);*/
     border: rgba(0,0,0,0.3);
 
 }
@@ -117,14 +103,11 @@ nav{
 }
 
 .ax-low{
-   
-    color: var(--ax-low); 
-
+     color: var(--ax-low); 
 }
 
 .ax-normal{
     color: var(--ax-normal); 
-
 }
 
 .ax-high{
@@ -135,15 +118,9 @@ nav{
     color: white;
 }
 
-.cdk-overlay-pane{
+.cdk-overlay-pane, .cdk-overlay-container{
     z-index: 20000;
 }
-
-.cdk-overlay-container{
-    z-index: 20000;
-}
-
-
 
 
 @media (min-width: 50rem){

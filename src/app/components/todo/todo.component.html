@@ -7,7 +7,7 @@
       <button
         mat-mini-fab
         [ngClass]="status"
-        aria-label="Example icon button with a menu icon"
+        aria-label="icon status"
       ></button>
     </div>
     <section>
@@ -46,10 +46,10 @@
 
 
   <mat-card-actions class="r-flex">
-    <button mat-button (click)="edit(todo)" class="">
+    <button mat-button (click)="edit(todo)" role="button" aria-label="edit the todo">
       <i class="fa-solid fa-pen-to-square"></i>
     </button>
-    <button mat-button (click)="delete(todo)" class="mr-1">
+    <button mat-button (click)="delete(todo)" class="mr-1" role="button" aria-label="trash the todo">
       <i class="fa-solid fa-trash"></i>
     </button>
   </mat-card-actions>

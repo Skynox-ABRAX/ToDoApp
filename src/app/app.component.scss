@@ -16,8 +16,6 @@
 }
 
 
-
-
 nav{
     align-items: center;
     width: 100%;
@@ -70,18 +68,18 @@ i{
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         border-radius: 5px;
         cursor: pointer;
-        // opacity: 1;
-        // transition: opacity 300ms ease-in;
 }
-
-
-
-
-
 
 #menu{
     display : none;
 }
+
+.hamburger{
+    position: relative;
+}
+
+
+
 
 @media (width : 1000px){
 
@@ -95,18 +93,6 @@ i{
     #menu{
         display: block;
     }
-}
-
-.hamburger{
-    position: relative;
-}
-
-.visible{
-    display: block;
-}
-
-.no-visible{
-    display: none;
 }
 
 
@@ -130,8 +116,6 @@ i{
 
 
 
-
-
 @media (min-width : 36rem){
 
     .main-content{
@@ -144,8 +128,7 @@ i{
 
     .content-overlay{
         padding: 3rem;
-
-    }
+  }
 }
 
 
@@ -167,8 +150,7 @@ i{
     .fa-bars{
         display: none;
     }
-
-    
+   
 }
 
 

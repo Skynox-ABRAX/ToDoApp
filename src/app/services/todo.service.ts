@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { filter, map, Subject, Subscription } from 'rxjs';
+
 import { events } from '../enums/eventsEnum';
 import { status } from '../enums/statusEnum';
 import { ITodoService } from '../interface/ITodoService';
@@ -139,8 +140,6 @@ export class TodoService implements ITodoService {
       new todo ({ id: 12, title: "titre 6", content: "lorem 6", status: status.started, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
       new todo ({ id: 13, title: "titre 7", content: "lorem 7", status: status.inProgress, priority: priority.low, closing: new Date(), createdAt: new Date(), updatedAt: new Date()}),
       new todo ({ id: 14, title: "titre 8", content: "lorem 8", status: status.Canceled, priority: priority.high, closing: new Date(), createdAt: new Date(), updatedAt: new Date()})
-
-
 
     ]
 

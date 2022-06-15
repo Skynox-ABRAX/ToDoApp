@@ -21,20 +21,14 @@
       <i class="fa-solid fa-tag" [ngClass]="priority"> </i>
     </section>
 
-
-
-
-
-
-
   </mat-card-title>
 
 
   <mat-card-actions class="r-flex">
-    <button mat-button (click)="edit(todo)" class="">
+    <button mat-button (click)="edit(todo)"  role="button" aria-label="edit the todo">
       <i class="fa-solid fa-pen-to-square"></i>
     </button>
-    <button mat-button (click)="delete(todo)" class="mr-1 ml-0 pl-0">
+    <button mat-button (click)="delete(todo)" class="mr-1 ml-0 pl-0" role="button" aria-label="trash the todo">
       <i class="fa-solid fa-trash"></i>
     </button>
   </mat-card-actions>

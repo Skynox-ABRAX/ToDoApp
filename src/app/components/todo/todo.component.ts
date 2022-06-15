@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+
 import { events } from 'src/app/enums/eventsEnum';
 import { eventEmit } from 'src/app/models/eventEmit';
 import { todo } from 'src/app/models/todo';
@@ -12,10 +13,11 @@ import { TodoService } from 'src/app/services/todo.service';
 export class TodoComponent implements OnInit {
 
   @Input() todo: todo;
+
   _tempTodo: todo;
+
   song: boolean = false;
   id: any;
-  
   status: string = "ax-closed";
   priority: string = "ax-normal";
 
@@ -85,6 +87,7 @@ export class TodoComponent implements OnInit {
   {
     this.status = "ax-" + this.todo.status.toLowerCase();
     this.priority = "ax-" + this.todo.priority.toLowerCase();
+    
     if (new Date(Date.now()) > this.todo.closing) {
       this.song = true;
     } else {

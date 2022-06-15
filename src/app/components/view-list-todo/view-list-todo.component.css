@@ -3,16 +3,17 @@
   width: 100%;
 }
 
-.mat-card {
+.mat-card, .mat-card-title {
   display: flex;
   flex-direction: column;
+}
+
+.mat-card {
   box-sizing: border-box;
 }
 
 .mat-card-title {
   color: rgba(40, 40, 40, 0.8);
-  display: flex;
-  flex-direction: column;
   row-gap: 1rem;
   width: 100%;
 }

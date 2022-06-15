@@ -2,7 +2,7 @@ import { animate, animation, keyframes, query, sequence, stagger, state, style, 
 
 export const showTodoAnimation = [
   trigger('showTilesTodo', [
-    transition('* => *', [ // each time the binding value changes
+    transition('* => *', [ 
       query(':leave', [
         stagger(100, [
           animate('0.5s', style({ opacity: 0 }))
@@ -18,6 +18,8 @@ export const showTodoAnimation = [
   ])
 ];
 
+
+
 export const showTopButton = [
   trigger('showTopButton', [
       state('void', style({ opacity: 0 })),
@@ -31,7 +33,7 @@ export const showTopButton = [
 
 export const showListAnimation = [
   trigger('showList', [
-    transition('* => *', [ // each time the binding value changes
+    transition('* => *', [ 
       query(':leave', [
         stagger(100, [
           animate('0.5s', style({ opacity: 0 }))
