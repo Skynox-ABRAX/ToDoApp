@@ -56,7 +56,7 @@
 
 ### Prerequisites
 
-No prerequisites needed. Only one browser needed.
+Node Js installed.[https://nodejs.org/en/](https://nodejs.org/en/)
 
 ### Installation
 
