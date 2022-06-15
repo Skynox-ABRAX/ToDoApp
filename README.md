@@ -64,8 +64,9 @@ No prerequisites needed. Only one browser needed.
 
 1. Download the project
 2. Open up the project in vs code for example (https://code.visualstudio.com/)
-3. Open with live server (https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-4. Enjoy
+3. run npm install 
+4. run "npm start"
+5. Enjoy
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
